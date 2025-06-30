@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Font Face Declarations */
+@font-face {
+  font-family: 'Olympian Roman';
+  src: url('/fonts/Olympian Roman/Olympian Roman.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'American Oak Inline';
+  src: url('/fonts/american-oak-font-1751206833-0/americanoak-inline.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'American Oak Script';
+  src: url('/fonts/american-oak-font-1751206833-0/americanoak-script.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'American Oak Serif';
+  src: url('/fonts/american-oak-font-1751206833-0/americanoak-serif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'American Oak Slab';
+  src: url('/fonts/american-oak-font-1751206833-0/americanoak-slab.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Font Utility Classes */
+.font-olympian {
+  font-family: 'Olympian Roman', serif;
+}
+
+.font-oak-inline {
+  font-family: 'American Oak Inline', sans-serif;
+}
+
+.font-oak-script {
+  font-family: 'American Oak Script', cursive;
+}
+
+.font-oak-serif {
+  font-family: 'American Oak Serif', serif;
+}
+
+.font-oak-slab {
+  font-family: 'American Oak Slab', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
