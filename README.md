@@ -14,15 +14,22 @@ A beautiful wedding invitation website built with Angular 20. Features personali
 
 ## Deployment
 
-This project automatically deploys to GitHub Pages using GitHub Actions. Every push to the `main` branch triggers a new deployment.
+This project automatically deploys to GitHub Pages using GitHub Actions. 
 
-**Live Site:** `https://[username].github.io/WeddingInvite/`
+**Live Site:** `https://[your-username].github.io/wedding-invite/`
 
-### Manual Deployment Setup
+### 🚀 Quick Setup
 
-1. Enable GitHub Pages in your repository settings
-2. Set source to "GitHub Actions"
-3. Push to main branch to trigger deployment
+**⚠️ First-time setup required:** See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
+
+**TL;DR:**
+1. Go to repository **Settings** → **Pages**
+2. Set **Source** to **GitHub Actions**
+3. Push to `main` branch
+
+### 🔄 Automatic Deployment
+
+Every push to the `main` branch triggers a new deployment automatically.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
 
