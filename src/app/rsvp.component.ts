@@ -35,7 +35,7 @@ export class RsvpComponent implements OnInit {
   }
 
   private loadGuestData() {
-    this.http.get<any[]>('/guest-list.json').subscribe({
+    this.http.get<any[]>('guest-list.json').subscribe({
       next: (guestList) => {
         // Get inviteeId from URL query parameter
         const inviteeId = this.route.snapshot.queryParams['inviteeId'];
