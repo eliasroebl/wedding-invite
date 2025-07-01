@@ -1,5 +1,29 @@
 # WeddingInvite
 
+A beautiful wedding invitation website built with Angular 20. Features personalized greetings, RSVP functionality with Google Sheets integration, and responsive design.
+
+## Features
+
+- 🎨 Elegant design with custom fonts and animations
+- 👥 Personalized greetings based on guest data
+- 📝 RSVP form with dietary preferences and comments
+- 📊 Google Sheets integration for response storage
+- 📱 Fully responsive design for all devices
+- ⏰ Wedding countdown timer
+- 🚀 Automated deployment to GitHub Pages
+
+## Deployment
+
+This project automatically deploys to GitHub Pages using GitHub Actions. Every push to the `main` branch triggers a new deployment.
+
+**Live Site:** `https://[username].github.io/WeddingInvite/`
+
+### Manual Deployment Setup
+
+1. Enable GitHub Pages in your repository settings
+2. Set source to "GitHub Actions"
+3. Push to main branch to trigger deployment
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
 
 ## Development server
