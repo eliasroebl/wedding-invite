@@ -1,0 +1,64 @@
+<div class="page-container">
+  <div class="couple-section">
+    <img
+      src="/couple-photo.jpeg"
+      alt="Soon to be weds"
+      class="couple-image"
+    />
+    <img src="/names.png" alt="Pamela & Elias" class="names-overlay" />
+  </div>
+
+  <div class="info-section">
+    <img src="/eucalyptus.png" alt="Eucalyptus decoration" class="eucalyptus-overlay" />
+    <img src="/olive.png" alt="Olive decoration" class="olive-overlay" />
+    <div class="rsvp-form">
+      <h2 class="font-oak-serif rsvp-title">Antwort auf die Hochzeitseinladung</h2>
+
+      <div class="acceptance-section">
+        <h3 class="font-oak-serif">Könnt ihr an unserer Hochzeit teilnehmen?</h3>
+        <div class="acceptance-buttons">
+          <button
+            class="acceptance-btn font-oak-serif"
+            [class.active]="rsvpData.accepted === true"
+            (click)="rsvpData.accepted = true">
+            ✓ Ja, wir kommen gerne!
+          </button>
+          <button
+            class="acceptance-btn font-oak-serif"
+            [class.active]="rsvpData.accepted === false"
+            (click)="rsvpData.accepted = false">
+            ✗ Leider können wir nicht kommen
+          </button>
+        </div>
+      </div>
+
+      @if (rsvpData.accepted === true) {
+        <div class="dietary-section">
+          <h3 class="font-oak-serif">Besondere Ernährungswünsche</h3>
+          <p class="dietary-intro font-olympian">Falls ihr besondere Ernährungswünsche habt, teilt sie uns gerne mit:</p>
+          <textarea
+            class="dietary-textarea font-olympian"
+            placeholder="z.B. Ich bin Vegetarier, die Kinder essen nur Nudeln ohne Soße..."
+            [(ngModel)]="rsvpData.dietaryPreferences"
+            rows="3">
+          </textarea>
+        </div>
+      }
+
+      <div class="anmerkung-section">
+        <h3 class="font-oak-serif">Anmerkungen</h3>
+        <textarea
+          class="anmerkung-textarea font-olympian"
+          placeholder="Hier könnt ihr uns alles mitteilen, was ihr uns wissen lassen möchtet..."
+          [(ngModel)]="rsvpData.anmerkung"
+          rows="4">
+        </textarea>
+      </div>
+
+      <div class="rsvp-form-buttons">
+        <button class="back-btn font-oak-serif" (click)="backToInvitation()">Zurück</button>
+        <button class="submit-btn font-oak-serif" (click)="submitRsvp()">Antwort senden</button>
+      </div>
+    </div>
+  </div>
+</div>
