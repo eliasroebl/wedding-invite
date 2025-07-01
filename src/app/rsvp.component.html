@@ -14,51 +14,86 @@
     <div class="rsvp-form">
       <h2 class="font-oak-serif rsvp-title">Antwort auf die Hochzeitseinladung</h2>
 
-      <div class="acceptance-section">
-        <h3 class="font-oak-serif">Könnt ihr an unserer Hochzeit teilnehmen?</h3>
-        <div class="acceptance-buttons">
-          <button
-            class="acceptance-btn font-oak-serif"
-            [class.active]="rsvpData.accepted === true"
-            (click)="rsvpData.accepted = true">
-            ✓ Ja, wir kommen gerne!
-          </button>
-          <button
-            class="acceptance-btn font-oak-serif"
-            [class.active]="rsvpData.accepted === false"
-            (click)="rsvpData.accepted = false">
-            ✗ Leider können wir nicht kommen
-          </button>
+      @if (hasAlreadySubmitted) {
+        <div class="already-submitted-message">
+          <h3 class="font-oak-serif">Antwort bereits gesendet</h3>
+          <p class="font-olympian">{{ getAlreadySubmittedText() }}</p>
+          
+          <h4 class="font-oak-serif">{{ getResponseHeaderText() }}</h4>
+          <div class="submitted-response">
+            <p class="font-olympian"><strong>Teilnahme:</strong> {{ getSubmittedAcceptanceText() }}</p>
+            @if (rsvpData.accepted && rsvpData.dietaryPreferences) {
+              <p class="font-olympian"><strong>Ernährungswünsche:</strong> {{ rsvpData.dietaryPreferences }}</p>
+            }
+            @if (rsvpData.anmerkung) {
+              <p class="font-olympian"><strong>Anmerkungen:</strong> {{ rsvpData.anmerkung }}</p>
+            }
+          </div>
+          
+          <p class="font-olympian change-notice">{{ getChangeNoticeText() }}</p>
+          
+          <div class="rsvp-form-buttons">
+            <button class="back-btn font-oak-serif" (click)="backToInvitation()">Zurück zur Einladung</button>
+          </div>
         </div>
-      </div>
+      } @else {
+        <div class="acceptance-section">
+          <h3 class="font-oak-serif">{{ getAttendanceQuestion() }}</h3>
+          <div class="acceptance-buttons">
+            <button
+              class="acceptance-btn font-oak-serif"
+              [class.active]="rsvpData.accepted === true"
+              (click)="rsvpData.accepted = true">
+              ✓ {{ getAcceptanceText() }}
+            </button>
+            <button
+              class="acceptance-btn font-oak-serif"
+              [class.active]="rsvpData.accepted === false"
+              (click)="rsvpData.accepted = false">
+              ✗ {{ getDeclineText() }}
+            </button>
+          </div>
+        </div>
 
-      @if (rsvpData.accepted === true) {
-        <div class="dietary-section">
-          <h3 class="font-oak-serif">Besondere Ernährungswünsche</h3>
-          <p class="dietary-intro font-olympian">Falls ihr besondere Ernährungswünsche habt, teilt sie uns gerne mit:</p>
+        @if (rsvpData.accepted === true) {
+          <div class="dietary-section">
+            <h3 class="font-oak-serif">Besondere Ernährungswünsche</h3>
+            <p class="dietary-intro font-olympian">{{ getDietaryIntroText() }}</p>
+            <textarea
+              class="dietary-textarea font-olympian"
+              placeholder="z.B. Ich bin Vegetarier, die Kinder essen nur Nudeln ohne Soße..."
+              [(ngModel)]="rsvpData.dietaryPreferences"
+              rows="3">
+            </textarea>
+          </div>
+        }
+
+        <div class="anmerkung-section">
+          <h3 class="font-oak-serif">Anmerkungen</h3>
           <textarea
-            class="dietary-textarea font-olympian"
-            placeholder="z.B. Ich bin Vegetarier, die Kinder essen nur Nudeln ohne Soße..."
-            [(ngModel)]="rsvpData.dietaryPreferences"
-            rows="3">
+            class="anmerkung-textarea font-olympian"
+            [placeholder]="getCommentsPlaceholder()"
+            [(ngModel)]="rsvpData.anmerkung"
+            rows="4">
           </textarea>
         </div>
+
+        <div class="rsvp-form-buttons">
+          <button class="back-btn font-oak-serif" (click)="backToInvitation()" [disabled]="isSubmitting">Zurück</button>
+          <button 
+            class="submit-btn font-oak-serif" 
+            [class.loading]="isSubmitting"
+            [disabled]="isSubmitting"
+            (click)="submitRsvp()">
+            @if (isSubmitting) {
+              <span class="loading-spinner"></span>
+              Wird gesendet...
+            } @else {
+              Antwort senden
+            }
+          </button>
+        </div>
       }
-
-      <div class="anmerkung-section">
-        <h3 class="font-oak-serif">Anmerkungen</h3>
-        <textarea
-          class="anmerkung-textarea font-olympian"
-          placeholder="Hier könnt ihr uns alles mitteilen, was ihr uns wissen lassen möchtet..."
-          [(ngModel)]="rsvpData.anmerkung"
-          rows="4">
-        </textarea>
-      </div>
-
-      <div class="rsvp-form-buttons">
-        <button class="back-btn font-oak-serif" (click)="backToInvitation()">Zurück</button>
-        <button class="submit-btn font-oak-serif" (click)="submitRsvp()">Antwort senden</button>
-      </div>
     </div>
   </div>
 </div>

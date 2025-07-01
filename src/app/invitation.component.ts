@@ -15,6 +15,11 @@ export class InvitationComponent implements OnInit, OnDestroy {
   protected personalizedGreeting = '';
   protected showPersonalizedContent = false;
   protected currentGuest: any = null;
+  protected hasAlreadySubmitted = false;
+  protected rsvpResponse: any = null;
+  
+  // Google Apps Script Web App URL
+  private readonly GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjJN8k-qcZzVUX3uBtZLy-DPoGaSRD6pmfgXD6j9qV_6DdJhIixhCNMyzlEgvMOgXNOg/exec';
 
   constructor(
     private http: HttpClient, 
@@ -85,6 +90,7 @@ export class InvitationComponent implements OnInit, OnDestroy {
           this.personalizedGreeting = this.generateGreeting(guest);
           this.showPersonalizedContent = true;
           this.currentGuest = guest;
+          this.checkExistingSubmission();
         } else {
           this.showPersonalizedContent = false;
         }
@@ -133,10 +139,78 @@ export class InvitationComponent implements OnInit, OnDestroy {
     return `${greeting},\nhiermit laden wir ${pronoun}${childrenText} herzlich zu unserer Hochzeit ein.`;
   }
 
+  private checkExistingSubmission() {
+    if (!this.currentGuest) return;
+    
+    // Check if this guest has already submitted an RSVP
+    const callbackName = 'checkRsvpCallback' + Date.now();
+    
+    // Create global callback function
+    (window as any)[callbackName] = (response: any) => {
+      console.log('RSVP check response:', response);
+      if (response.status === 'exists') {
+        this.hasAlreadySubmitted = true;
+        this.rsvpResponse = response.data;
+      } else {
+        this.hasAlreadySubmitted = false;
+        this.rsvpResponse = null;
+      }
+      // Clean up
+      document.head.removeChild(script);
+      delete (window as any)[callbackName];
+    };
+    
+    // Create script element for checking existing submission
+    const script = document.createElement('script');
+    const params = new URLSearchParams();
+    params.append('action', 'check');
+    params.append('inviteeId', this.currentGuest.inviteeId);
+    params.append('callback', callbackName);
+    
+    script.src = `${this.GOOGLE_SCRIPT_URL}?${params.toString()}`;
+    script.onerror = () => {
+      console.error('Error checking existing RSVP');
+      // If we can't check, assume they haven't submitted yet
+      this.hasAlreadySubmitted = false;
+      document.head.removeChild(script);
+      delete (window as any)[callbackName];
+    };
+    
+    // Add script to head to trigger the request
+    document.head.appendChild(script);
+  }
+
   protected goToRsvp() {
     // Navigate to RSVP with current query parameters
     this.router.navigate(['/rsvp'], { 
       queryParams: this.route.snapshot.queryParams 
     });
+  }
+
+  protected getThankYouMessage(): string {
+    if (!this.currentGuest || !this.rsvpResponse) {
+      return this.currentGuest?.overallCount === 1 
+        ? '✓ Danke für deine Rückmeldung!'
+        : '✓ Danke für eure Rückmeldung!';
+    }
+
+    const isAccepted = this.rsvpResponse.accepted === 'Ja';
+    const isSingular = this.currentGuest.overallCount === 1;
+    
+    let thankYouText = isSingular 
+      ? '✓ Danke für deine Rückmeldung!'
+      : '✓ Danke für eure Rückmeldung!';
+    
+    if (isAccepted) {
+      thankYouText += isSingular 
+        ? '\nWir freuen uns auf dich!'
+        : '\nWir freuen uns auf euch!';
+    } else {
+      thankYouText += isSingular
+        ? '\nSchade, dass du nicht kommen kannst.'
+        : '\nSchade, dass ihr nicht kommen könnt.';
+    }
+    
+    return thankYouText;
   }
 }

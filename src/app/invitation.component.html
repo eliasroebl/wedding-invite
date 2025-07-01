@@ -57,7 +57,13 @@
           Einladung herunterladen
         </a>
         @if (showPersonalizedContent) {
-          <button class="rsvp-button font-oak-serif" (click)="goToRsvp()">Antworten</button>
+          @if (hasAlreadySubmitted) {
+            <div class="thank-you-text">
+              <p class="font-olympian greeting-text" style="white-space: pre-line;">{{ getThankYouMessage() }}</p>
+            </div>
+          } @else {
+            <button class="rsvp-button font-oak-serif" (click)="goToRsvp()">Antworten</button>
+          }
         }
       </div>
     </div>

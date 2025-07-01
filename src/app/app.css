@@ -239,6 +239,15 @@
   box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
 }
 
+.thank-you-text {
+  margin: 25px 0 35px 0;
+  padding: 20px;
+  background: rgba(44, 85, 48, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(44, 85, 48, 0.1);
+  text-align: center;
+}
+
 .download-button {
   background: transparent;
   color: #2C5530;
@@ -432,10 +441,44 @@
   box-shadow: 0 6px 20px rgba(44, 85, 48, 0.3);
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   background: linear-gradient(135deg, #1E3A20, #163018);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(44, 85, 48, 0.4);
+}
+
+.submit-btn:disabled,
+.back-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.submit-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.loading-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* Desktop scaling */
@@ -479,6 +522,11 @@
   }
 
   .personalized-greeting {
+    margin: 20px 0 30px 0;
+    padding: 18px;
+  }
+
+  .thank-you-text {
     margin: 20px 0 30px 0;
     padding: 18px;
   }
@@ -535,6 +583,12 @@
   }
 
   .personalized-greeting {
+    margin: 20px 0 25px 0;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .thank-you-text {
     margin: 20px 0 25px 0;
     padding: 15px;
     border-radius: 12px;
@@ -686,6 +740,12 @@
   }
 
   .personalized-greeting {
+    margin: 15px 0 20px 0;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .thank-you-text {
     margin: 15px 0 20px 0;
     padding: 12px;
     border-radius: 10px;
