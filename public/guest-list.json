@@ -33,5 +33,17 @@
     }],
     "children": ["Sophie Weber"],
     "overallCount": 3
+  },
+  {
+    "inviteeId": "6272e7a0-f6d1-451f-9a8b-c8f62de0ca8b",
+    "invitees": [{
+      "inviteeName": "Laura Astleithner",
+      "gender": "Female"
+    },
+      {
+        "inviteeName": "Clemens Astleithner",
+        "gender": "Male"
+      }],
+    "overallCount": 2
   }
 ]
