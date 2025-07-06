@@ -17,16 +17,16 @@
       @if (hasAlreadySubmitted) {
         <div class="already-submitted-message">
           <h3 class="font-oak-serif">Antwort bereits gesendet</h3>
-          <p class="font-olympian">{{ getAlreadySubmittedText() }}</p>
+          <p class="font-oak-serif">{{ getAlreadySubmittedText() }}</p>
           
           <h4 class="font-oak-serif">{{ getResponseHeaderText() }}</h4>
           <div class="submitted-response">
-            <p class="font-olympian"><strong>Teilnahme:</strong> {{ getSubmittedAcceptanceText() }}</p>
+            <p class="font-oak-serif"><strong>Teilnahme:</strong> {{ getSubmittedAcceptanceText() }}</p>
             @if (rsvpData.accepted && rsvpData.dietaryPreferences) {
-              <p class="font-olympian"><strong>Ernährungswünsche:</strong> {{ rsvpData.dietaryPreferences }}</p>
+              <p class="font-oak-serif"><strong>Ernährungswünsche:</strong> {{ rsvpData.dietaryPreferences }}</p>
             }
             @if (rsvpData.anmerkung) {
-              <p class="font-olympian"><strong>Anmerkungen:</strong> {{ rsvpData.anmerkung }}</p>
+              <p class="font-oak-serif"><strong>Anmerkungen:</strong> {{ rsvpData.anmerkung }}</p>
             }
           </div>
           

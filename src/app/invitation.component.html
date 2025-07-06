@@ -13,34 +13,34 @@
     <img src="olive.png" alt="Olive decoration" class="olive-overlay" />
     <div class="wedding-details">
       <h1 class="font-oak-script">Wir heiraten!</h1>
-      
+
       @if (showPersonalizedContent && personalizedGreeting) {
         <div class="personalized-greeting">
-          <p class="font-olympian greeting-text">{{ personalizedGreeting }}</p>
+          <p class="font-oak-serif greeting-text">{{ personalizedGreeting }}</p>
         </div>
       }
-      
+
       <div class="date-section">
         <h3 class="font-oak-serif section-header">Wann?</h3>
         <div class="date-time-container">
-          <span class="font-olympian wedding-date">06. September 2025</span>
+          <span class="font-oak-serif wedding-date">06. September 2025</span>
           <span class="wedding-time-divider">•</span>
-          <span class="font-olympian wedding-time">14:00 Uhr</span>
+          <span class="font-oak-serif wedding-time">14:00 Uhr</span>
         </div>
       </div>
 
       <div class="countdown-timer">
         <div class="countdown-item">
-          <span class="countdown-number" id="days">0</span>
-          <span class="countdown-label">Tage</span>
+          <span class="countdown-number font-oak-serif" id="days">0</span>
+          <span class="countdown-label font-oak-serif">Tage</span>
         </div>
         <div class="countdown-item">
-          <span class="countdown-number" id="hours">0</span>
-          <span class="countdown-label">Stunden</span>
+          <span class="countdown-number font-oak-serif" id="hours">0</span>
+          <span class="countdown-label font-oak-serif">Stunden</span>
         </div>
         <div class="countdown-item">
-          <span class="countdown-number" id="minutes">0</span>
-          <span class="countdown-label">Minuten</span>
+          <span class="countdown-number font-oak-serif" id="minutes">0</span>
+          <span class="countdown-label font-oak-serif">Minuten</span>
         </div>
       </div>
 
@@ -48,8 +48,8 @@
 
       <div class="location-section">
         <h3 class="font-oak-serif section-header">Wo?</h3>
-        <p class="font-olympian location-info">KletzmayrHof</p>
-        <p class="font-olympian location-address">Niederschöfring 22, 4502 Niederschöfring</p>
+        <p class="font-oak-serif location-info">Kletzmayr Hof</p>
+        <p class="font-olympian location-address">Niederschöfring 22, 4502 St.Marien</p>
       </div>
 
       <div class="action-buttons">
@@ -59,7 +59,7 @@
         @if (showPersonalizedContent) {
           @if (hasAlreadySubmitted) {
             <div class="thank-you-text">
-              <p class="font-olympian greeting-text" style="white-space: pre-line;">{{ getThankYouMessage() }}</p>
+              <p class="font-oak-serif greeting-text" style="white-space: pre-line;">{{ getThankYouMessage() }}</p>
             </div>
           } @else {
             <button class="rsvp-button font-oak-serif" (click)="goToRsvp()">Antworten</button>

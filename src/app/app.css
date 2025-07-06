@@ -1,3 +1,9 @@
+/* Font Hierarchy:
+ * - Oak Script: Main title only ("Wir heiraten!")
+ * - Oak Serif: All headings, buttons, and important UI elements
+ * - Olympian Roman: Body text, descriptions, form content, and general text
+ */
+
 .page-container {
   display: flex;
   flex-direction: row;
@@ -423,6 +429,7 @@
   transition: all 0.3s ease;
   border: none;
   min-width: 140px;
+  min-height: 50px;
 }
 
 .back-btn {
@@ -661,12 +668,16 @@
 
   .action-buttons {
     margin-top: 40px;
-    gap: 15px;
+    margin-bottom: 60px;
+    gap: 25px;
+    padding: 0 20px;
   }
 
   .rsvp-button {
-    padding: 12px 30px;
-    font-size: 1.1rem;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    min-height: 56px;
+    margin: 10px 0;
   }
 
   .download-button {
@@ -701,14 +712,31 @@
 
   .acceptance-btn {
     min-width: auto;
+    padding: 18px 25px;
+    font-size: 1.2rem;
+    min-height: 56px;
+    margin: 8px 0;
+  }
+
+  .back-btn,
+  .submit-btn {
+    padding: 18px 35px;
+    font-size: 1.2rem;
+    min-width: 160px;
+    min-height: 56px;
+    margin: 8px 0;
   }
 
   .rsvp-form-buttons {
     flex-direction: column;
+    gap: 25px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    padding: 0 20px;
   }
 
   .rsvp-form {
-    padding: 15px;
+    padding: 15px 15px 80px 15px;
     min-height: calc(100vh - 200px);
     background-color: white;
   }
@@ -807,7 +835,9 @@
 
   .action-buttons {
     margin-top: 30px;
-    padding-bottom: 30px;
+    margin-bottom: 80px;
+    padding: 0 15px 40px 15px;
+    gap: 30px;
   }
 
   .eucalyptus-overlay {
@@ -832,9 +862,33 @@
   }
 
   .rsvp-form {
-    padding: 10px;
+    padding: 10px 10px 100px 10px;
     min-height: calc(100vh - 180px);
     background-color: white;
+  }
+
+  .acceptance-btn {
+    min-width: auto;
+    padding: 20px 30px;
+    font-size: 1.3rem;
+    min-height: 60px;
+    margin: 10px 0;
+  }
+
+  .back-btn,
+  .submit-btn {
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    min-width: 180px;
+    min-height: 60px;
+    margin: 10px 0;
+  }
+
+  .rsvp-button {
+    padding: 20px 45px;
+    font-size: 1.3rem;
+    min-height: 60px;
+    margin: 15px 0;
   }
 
 }
