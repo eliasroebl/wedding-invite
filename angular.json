@@ -22,6 +22,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "fonts",
+                "output": "fonts"
               }
             ],
             "styles": [

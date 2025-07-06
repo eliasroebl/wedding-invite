@@ -12,57 +12,57 @@
     <img src="eucalyptus.png" alt="Eucalyptus decoration" class="eucalyptus-overlay" />
     <img src="olive.png" alt="Olive decoration" class="olive-overlay" />
     <div class="wedding-details">
-      <h1 class="font-oak-script">Wir heiraten!</h1>
+      <h1 class="font-title">Wir heiraten!</h1>
 
       @if (showPersonalizedContent && personalizedGreeting) {
         <div class="personalized-greeting">
-          <p class="font-oak-serif greeting-text">{{ personalizedGreeting }}</p>
+          <p class="font-heading greeting-text">{{ personalizedGreeting }}</p>
         </div>
       }
 
       <div class="date-section">
-        <h3 class="font-oak-serif section-header">Wann?</h3>
+        <h3 class="font-heading section-header">Wann?</h3>
         <div class="date-time-container">
-          <span class="font-oak-serif wedding-date">06. September 2025</span>
+          <span class="font-heading wedding-date">06. September 2025</span>
           <span class="wedding-time-divider">•</span>
-          <span class="font-oak-serif wedding-time">14:00 Uhr</span>
+          <span class="font-heading wedding-time">14:00 Uhr</span>
         </div>
       </div>
 
       <div class="countdown-timer">
         <div class="countdown-item">
-          <span class="countdown-number font-oak-serif" id="days">0</span>
-          <span class="countdown-label font-oak-serif">Tage</span>
+          <span class="countdown-number font-heading" id="days">0</span>
+          <span class="countdown-label font-body">Tage</span>
         </div>
         <div class="countdown-item">
-          <span class="countdown-number font-oak-serif" id="hours">0</span>
-          <span class="countdown-label font-oak-serif">Stunden</span>
+          <span class="countdown-number font-heading" id="hours">0</span>
+          <span class="countdown-label font-body">Stunden</span>
         </div>
         <div class="countdown-item">
-          <span class="countdown-number font-oak-serif" id="minutes">0</span>
-          <span class="countdown-label font-oak-serif">Minuten</span>
+          <span class="countdown-number font-heading" id="minutes">0</span>
+          <span class="countdown-label font-body">Minuten</span>
         </div>
       </div>
 
       <div class="separator"></div>
 
       <div class="location-section">
-        <h3 class="font-oak-serif section-header">Wo?</h3>
-        <p class="font-oak-serif location-info">Kletzmayr Hof</p>
-        <p class="font-olympian location-address">Niederschöfring 22, 4502 St.Marien</p>
+        <h3 class="font-heading section-header">Wo?</h3>
+        <p class="font-heading location-info">Kletzmayr Hof</p>
+        <p class="font-body location-address">Niederschöfring 22, 4502 St.Marien</p>
       </div>
 
       <div class="action-buttons">
-        <a href="wedding-invite.jpg" download="Pamela-Elias-Hochzeitseinladung.jpg" class="download-button font-oak-serif">
+        <a href="wedding-invite.jpg" download="Pamela-Elias-Hochzeitseinladung.jpg" class="download-button font-body">
           Einladung herunterladen
         </a>
         @if (showPersonalizedContent) {
           @if (hasAlreadySubmitted) {
             <div class="thank-you-text">
-              <p class="font-oak-serif greeting-text" style="white-space: pre-line;">{{ getThankYouMessage() }}</p>
+              <p class="font-heading greeting-text" style="white-space: pre-line;">{{ getThankYouMessage() }}</p>
             </div>
           } @else {
-            <button class="rsvp-button font-oak-serif" (click)="goToRsvp()">Antworten</button>
+            <button class="rsvp-button font-heading" (click)="goToRsvp()">Antworten</button>
           }
         }
       </div>
