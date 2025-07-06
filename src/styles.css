@@ -3,35 +3,35 @@
 /* Font Face Declarations */
 @font-face {
   font-family: 'Olympian Roman';
-  src: url('../public/fonts/Olympian Roman/Olympian Roman.otf') format('opentype');
+  src: url('../fonts/Olympian Roman/Olympian Roman.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'American Oak Inline';
-  src: url('../public/fonts/american-oak-font-1751206833-0/americanoak-inline.ttf') format('truetype');
+  src: url('../fonts/american-oak-font-1751206833-0/americanoak-inline.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'American Oak Script';
-  src: url('../public/fonts/american-oak-font-1751206833-0/americanoak-script.ttf') format('truetype');
+  src: url('../fonts/american-oak-font-1751206833-0/americanoak-script.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'American Oak Serif';
-  src: url('../public/fonts/american-oak-font-1751206833-0/americanoak-serif.ttf') format('truetype');
+  src: url('../fonts/american-oak-font-1751206833-0/americanoak-serif.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'American Oak Slab';
-  src: url('../public/fonts/american-oak-font-1751206833-0/americanoak-slab.ttf') format('truetype');
+  src: url('../fonts/american-oak-font-1751206833-0/americanoak-slab.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
