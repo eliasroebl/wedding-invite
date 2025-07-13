@@ -1,23 +1,28 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* You can add global styles to this file, and also import other style files */
 
 /* Font Face Declarations */
 @font-face {
   font-family: 'Olympian Roman';
-  src: url('fonts/Olympian Roman/Olympian Roman.otf') format('opentype');
+  src: url('/fonts/Olympian Roman/Olympian Roman.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'American Oak Script';
-  src: url('fonts/american-oak-font-1751206833-0/americanoak-script.ttf') format('truetype');
+  src: url('/fonts/american-oak-font-1751206833-0/americanoak-script.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'American Oak Serif';
-  src: url('fonts/american-oak-font-1751206833-0/americanoak-serif.ttf') format('truetype');
+  src: url('/fonts/american-oak-font-1751206833-0/americanoak-serif.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -42,4 +47,67 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+}
+
+/* Unified Button Styles */
+.btn-base {
+  @apply cursor-pointer transition-all duration-300 ease-in-out;
+}
+
+.btn-primary {
+  @apply btn-base bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl px-10 py-4 text-xl tracking-wide font-medium border-none;
+  box-shadow: 0 4px 12px rgba(44, 85, 48, 0.25);
+}
+
+.btn-primary:hover:not(:disabled) {
+  @apply bg-gradient-to-r from-primary-dark to-primary-darker transform -translate-y-px;
+  box-shadow: 0 6px 16px rgba(44, 85, 48, 0.35);
+}
+
+.btn-primary:active {
+  @apply transform translate-y-0;
+  box-shadow: 0 2px 8px rgba(44, 85, 48, 0.3);
+}
+
+.btn-secondary {
+  @apply btn-base bg-transparent text-primary border-2 border-solid border-primary rounded-3xl px-5 py-2 text-sm tracking-wide font-normal opacity-80;
+}
+
+.btn-secondary:hover {
+  @apply bg-primary text-white opacity-100 transform -translate-y-px;
+}
+
+.btn-secondary:active {
+  @apply transform translate-y-0;
+}
+
+.btn-outline {
+  @apply btn-base bg-transparent text-primary border-2 border-primary rounded-2xl px-5 py-4 text-lg border-solid;
+}
+
+.btn-outline:hover {
+  @apply bg-primary-light;
+}
+
+.btn-outline.active {
+  @apply bg-primary text-white;
+  box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
+}
+
+.btn-disabled {
+  @apply opacity-60 cursor-not-allowed;
+  transform: none !important;
+}
+
+/* Countdown Timer Components */
+.countdown-item {
+  @apply flex flex-col items-center min-w-20;
+}
+
+.countdown-number {
+  @apply font-heading text-primary text-3xl md:text-5xl font-bold mb-1;
+}
+
+.countdown-label {
+  @apply font-body text-primary-dark text-sm md:text-base uppercase tracking-wide;
 }

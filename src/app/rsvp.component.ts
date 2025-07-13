@@ -16,7 +16,7 @@ export class RsvpComponent implements OnInit {
   protected hasAlreadySubmitted: boolean = false;
   protected isSubmitting: boolean = false;
   protected rsvpData: any = {
-    accepted: false,
+    accepted: true,
     dietaryPreferences: '',
     anmerkung: ''
   };

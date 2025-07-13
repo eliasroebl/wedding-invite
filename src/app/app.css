@@ -4,33 +4,8 @@
  * - Olympian Roman: Body text, descriptions, form content, and general text
  */
 
-.page-container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-}
 
-/* Left third - Couple photo */
-.couple-section {
-  width: 33.33vw;
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-}
 
-.couple-image {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
 
 .names-overlay {
   position: absolute;
@@ -43,23 +18,6 @@
   filter: brightness(0) invert(1) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
 }
 
-/* Right two-thirds - Information */
-.info-section {
-  width: 66.67vw;
-  height: 100vh;
-  background-color: white;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 175px 40px 40px 40px;
-  box-sizing: border-box;
-  margin-left: 33.33vw;
-  top: 0;
-  right: 0;
-  overflow-y: auto;
-}
 
 .eucalyptus-overlay {
   position: absolute;
@@ -84,13 +42,6 @@
 }
 
 
-.wedding-details {
-  text-align: center;
-  max-width: 600px;
-  padding: 20px;
-  position: relative;
-  z-index: 10;
-}
 
 .personalized-greeting {
   margin: 25px 0 35px 0;
@@ -111,12 +62,6 @@
   white-space: pre-line;
 }
 
-.wedding-details h1 {
-  font-size: 3.5rem;
-  color: #2C5530;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-}
 
 .date-section {
   margin: 30px 0 40px 0;
@@ -219,31 +164,6 @@
   align-items: center;
   gap: 20px;
 }
-.rsvp-button {
-  background: linear-gradient(135deg, #2C5530, #1E3A20);
-  color: white;
-  border: none;
-  padding: 15px 40px;
-  font-size: 1.3rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(44, 85, 48, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-.rsvp-button:hover {
-  background: linear-gradient(135deg, #1E3A20, #163018);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(44, 85, 48, 0.4);
-}
-
-.rsvp-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
-}
 
 .thank-you-text {
   margin: 25px 0 35px 0;
@@ -254,47 +174,9 @@
   text-align: center;
 }
 
-.download-button {
-  background: transparent;
-  color: #2C5530;
-  border: 1px solid #2C5530;
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  text-transform: none;
-  letter-spacing: 0.5px;
-  font-weight: 400;
-  opacity: 0.8;
-}
 
-.download-button:hover {
-  background: #2C5530;
-  color: white;
-  opacity: 1;
-  transform: translateY(-1px);
-}
-
-.download-button:active {
-  transform: translateY(0);
-}
 
 /* RSVP Form Styles */
-.rsvp-form {
-  text-align: center;
-  max-width: 600px;
-  padding: 20px;
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
-  background-color: white;
-  box-sizing: border-box;
-}
 
 .rsvp-title {
   font-size: 2.5rem;
@@ -321,29 +203,6 @@
   flex-wrap: wrap;
 }
 
-.acceptance-btn {
-  flex: 1;
-  min-width: 200px;
-  padding: 15px 20px;
-  border: 2px solid #2C5530;
-  background: transparent;
-  color: #2C5530;
-  border-radius: 15px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.acceptance-btn:hover {
-  background: rgba(44, 85, 48, 0.1);
-}
-
-.acceptance-btn.active {
-  background: #2C5530;
-  color: white;
-  box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
-}
 
 .dietary-section {
   margin-bottom: 40px;
@@ -420,46 +279,6 @@
   margin-top: 40px;
 }
 
-.back-btn,
-.submit-btn {
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  min-width: 140px;
-  min-height: 50px;
-}
-
-.back-btn {
-  background: transparent;
-  color: #2C5530;
-  border: 2px solid #2C5530;
-}
-
-.back-btn:hover {
-  background: rgba(44, 85, 48, 0.1);
-}
-
-.submit-btn {
-  background: linear-gradient(135deg, #2C5530, #1E3A20);
-  color: white;
-  box-shadow: 0 6px 20px rgba(44, 85, 48, 0.3);
-}
-
-.submit-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #1E3A20, #163018);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(44, 85, 48, 0.4);
-}
-
-.submit-btn:disabled,
-.back-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none !important;
-}
 
 .submit-btn.loading {
   position: relative;
@@ -550,31 +369,8 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .page-container {
-    flex-direction: column;
-  }
 
-  .couple-section {
-    width: 100vw;
-    height: 200px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 20;
-    overflow: hidden;
-  }
 
-  .info-section {
-    width: 100vw;
-    height: calc(100vh - 200px);
-    position: fixed;
-    top: 200px;
-    left: 0;
-    padding: 10vw 20px 20px 20px;
-    overflow-y: auto;
-    margin-left: 0;
-    margin-top: 0;
-  }
 
   .names-overlay {
     position: absolute;
@@ -744,10 +540,6 @@
 
 /* Extra small screens */
 @media (max-width: 480px) {
-  .couple-section {
-    height: 180px;
-    overflow: hidden;
-  }
 
   .names-overlay {
     width: calc(100% - 20px);
@@ -756,12 +548,6 @@
     right: 10px;
   }
 
-  .info-section {
-    height: calc(100vh - 180px);
-    top: 180px;
-    padding: 20vw 15px 15px 15px;
-    overflow-y: auto;
-  }
 
   .wedding-details {
     padding: 5px;

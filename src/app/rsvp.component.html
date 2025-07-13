@@ -1,17 +1,17 @@
-<div class="page-container">
-  <div class="couple-section">
+<div class="flex flex-col md:flex-row h-screen w-screen m-0 p-0">
+  <div class="fixed top-0 left-0 z-20 overflow-hidden w-screen h-45 sm:h-50 md:w-1/3 md:h-screen">
     <img
       src="couple-photo.jpeg"
       alt="Soon to be weds"
-      class="couple-image"
+      class="w-full h-full object-cover object-center block"
     />
     <img src="names.png" alt="Pamela & Elias" class="names-overlay" />
   </div>
 
-  <div class="info-section">
+  <div class="fixed top-45 left-0 w-screen h-[calc(100vh-11.25rem)] sm:top-50 sm:h-[calc(100vh-12.5rem)] md:top-0 md:left-1/3 md:w-2/3 md:h-screen bg-white flex flex-col items-center justify-start box-border overflow-y-auto pt-20 px-4 pb-4 sm:pt-10 sm:px-5 md:pt-44 md:px-10 md:pb-10">
     <img src="eucalyptus.png" alt="Eucalyptus decoration" class="eucalyptus-overlay" />
     <img src="olive.png" alt="Olive decoration" class="olive-overlay" />
-    <div class="rsvp-form">
+    <div class="text-center max-w-2xl p-5 relative z-10 w-full h-full min-h-full bg-white box-border">
       <h2 class="font-heading rsvp-title">Antwort auf die Hochzeitseinladung</h2>
 
       @if (hasAlreadySubmitted) {
@@ -33,7 +33,7 @@
           <p class="font-body change-notice">{{ getChangeNoticeText() }}</p>
           
           <div class="rsvp-form-buttons">
-            <button class="back-btn font-heading" (click)="backToInvitation()">Zurück zur Einladung</button>
+            <button class="btn-outline font-heading" (click)="backToInvitation()">Zurück zur Einladung</button>
           </div>
         </div>
       } @else {
@@ -41,13 +41,13 @@
           <h3 class="font-heading">{{ getAttendanceQuestion() }}</h3>
           <div class="acceptance-buttons">
             <button
-              class="acceptance-btn font-heading"
+              class="btn-outline font-heading"
               [class.active]="rsvpData.accepted === true"
               (click)="rsvpData.accepted = true">
               ✓ {{ getAcceptanceText() }}
             </button>
             <button
-              class="acceptance-btn font-heading"
+              class="btn-outline font-heading"
               [class.active]="rsvpData.accepted === false"
               (click)="rsvpData.accepted = false">
               ✗ {{ getDeclineText() }}
@@ -79,10 +79,11 @@
         </div>
 
         <div class="rsvp-form-buttons">
-          <button class="back-btn font-heading" (click)="backToInvitation()" [disabled]="isSubmitting">Zurück</button>
+          <button class="btn-outline font-heading" [class.btn-disabled]="isSubmitting" (click)="backToInvitation()" [disabled]="isSubmitting">Zurück</button>
           <button 
-            class="submit-btn font-heading" 
+            class="btn-primary font-heading" 
             [class.loading]="isSubmitting"
+            [class.btn-disabled]="isSubmitting"
             [disabled]="isSubmitting"
             (click)="submitRsvp()">
             @if (isSubmitting) {
