@@ -1,0 +1,692 @@
+/* Font Hierarchy:
+ * - Oak Script: Main title only ("Wir heiraten!")
+ * - Oak Serif: All headings, buttons, and important UI elements
+ * - Olympian Roman: Body text, descriptions, form content, and general text
+ */
+
+/* ========================================
+   CSS Variables - Design System
+   ======================================== */
+:root {
+  /* Spacing Scale (8px base) */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+  --spacing-xxxl: 96px;
+
+  /* Colors */
+  --color-primary: #2C5530;
+  --color-primary-dark: #1E3A20;
+  --color-primary-darker: #163018;
+  --color-primary-light: rgba(44, 85, 48, 0.1);
+  --color-primary-lighter: rgba(44, 85, 48, 0.05);
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Typography Scale */
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  --font-size-xxxl: 2.5rem;
+  --font-size-display: 3.5rem;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+
+  /* Layout */
+  --sidebar-width: 33.33vw;
+  --content-width: 66.67vw;
+  --mobile-header-height: 200px;
+
+  /* Borders and Shadows */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 25px;
+  --border-radius-pill: 50px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 15px rgba(44, 85, 48, 0.3);
+  --shadow-lg: 0 6px 20px rgba(44, 85, 48, 0.3);
+  --shadow-xl: 0 8px 25px rgba(44, 85, 48, 0.4);
+
+  /* Transitions */
+  --transition-base: all 0.3s ease;
+}
+
+/* ========================================
+   Base Layout - Main Container
+   ======================================== */
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   Couple Section (Left Sidebar)
+   ======================================== */
+.couple-section {
+  position: fixed;
+  width: var(--sidebar-width);
+  height: 100vh;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.couple-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.names-overlay {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: var(--spacing-md);
+  right: var(--spacing-md);
+  width: calc(100% - var(--spacing-lg));
+  height: auto;
+  z-index: 10;
+  filter: brightness(0) invert(1) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+/* ========================================
+   Info Section (Right Content)
+   ======================================== */
+.info-section {
+  position: fixed;
+  left: var(--sidebar-width);
+  width: var(--content-width);
+  height: 100vh;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-xxl);
+  padding-top: calc(var(--spacing-xxxl) + var(--spacing-xxl));
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Decorative Overlays */
+.eucalyptus-overlay {
+  position: absolute;
+  top: -10vw;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.olive-overlay {
+  position: absolute;
+  rotate: -40deg;
+  bottom: calc(-1 * var(--spacing-xxl));
+  right: calc(-1 * var(--spacing-xxl));
+  width: 150px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* ========================================
+   Wedding Details Section
+   ======================================== */
+.wedding-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.wedding-details h1 {
+  font-size: var(--font-size-display);
+  color: var(--color-primary);
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Personalized Greeting */
+.personalized-greeting,
+.thank-you-text {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: var(--color-primary-lighter);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-primary-light);
+}
+
+.greeting-text {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  line-height: 1.7;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-style: italic;
+  white-space: pre-line;
+}
+
+/* Date Section */
+.date-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.section-header {
+  font-size: var(--font-size-xxl);
+  color: var(--color-primary);
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.date-time-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.wedding-date,
+.wedding-time-divider,
+.wedding-time {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  min-width: 80px;
+}
+
+.countdown-number {
+  font-size: var(--font-size-display);
+  font-weight: bold;
+  color: var(--color-primary);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.countdown-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Separator */
+.separator {
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  border-radius: 2px;
+  margin: var(--spacing-xl) 0;
+}
+
+/* Location Section */
+.location-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-align: center;
+}
+
+.location-info,
+.location-address {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+  font-weight: normal;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.location-info {
+  letter-spacing: 0.5px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+/* ========================================
+   Button Styles
+   ======================================== */
+.rsvp-button {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-xl);
+  font-size: var(--font-size-lg);
+  border-radius: var(--border-radius-pill);
+  cursor: pointer;
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-lg);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.rsvp-button:hover {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-darker));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.rsvp-button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+.download-button {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--font-size-xs);
+  border-radius: var(--border-radius-xl);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.download-button:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   RSVP Form Styles
+   ======================================== */
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  padding: var(--spacing-md);
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.rsvp-title {
+  font-size: var(--font-size-xxxl);
+  color: var(--color-primary);
+  text-align: center;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Form Sections */
+.acceptance-section,
+.dietary-section,
+.anmerkung-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.acceptance-section h3,
+.dietary-section h3,
+.anmerkung-section h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Acceptance Buttons */
+.acceptance-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.acceptance-btn {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-align: center;
+}
+
+.acceptance-btn:hover {
+  background: var(--color-primary-light);
+}
+
+.acceptance-btn.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+/* Text Areas */
+.dietary-intro {
+  font-size: var(--font-size-md);
+  color: var(--color-primary-dark);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.dietary-textarea,
+.anmerkung-textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-dark);
+  background: rgba(255, 255, 255, 0.9);
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+  transition: var(--transition-base);
+}
+
+.anmerkung-textarea {
+  min-height: 100px;
+}
+
+.dietary-textarea:focus,
+.anmerkung-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(44, 85, 48, 0.2);
+}
+
+/* Form Buttons */
+.rsvp-form-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+}
+
+.back-btn,
+.submit-btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-xl);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: var(--transition-base);
+  border: none;
+  min-width: 140px;
+}
+
+.back-btn {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.back-btn:hover {
+  background: var(--color-primary-light);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-darker));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.submit-btn:disabled,
+.back-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Loading State */
+.submit-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.loading-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--color-white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ========================================
+   Tablet Responsive (768px)
+   ======================================== */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 100vw;
+    --content-width: 100vw;
+  }
+
+  .page-container {
+    flex-direction: column;
+  }
+
+  .couple-section {
+    width: var(--sidebar-width);
+    height: var(--mobile-header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .info-section {
+    width: var(--content-width);
+    height: calc(100vh - var(--mobile-header-height));
+    position: fixed;
+    top: var(--mobile-header-height);
+    left: 0;
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .eucalyptus-overlay {
+    top: -25vw;
+  }
+
+  /* Typography Adjustments */
+  .wedding-details h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-header {
+    font-size: var(--font-size-xl);
+  }
+
+  .wedding-date,
+  .wedding-time,
+  .wedding-time-divider {
+    font-size: var(--font-size-lg);
+  }
+
+  .countdown-number {
+    font-size: 2rem;
+  }
+
+  .greeting-text {
+    font-size: var(--font-size-lg);
+  }
+
+  .location-info,
+  .location-address {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Form Adjustments */
+  .acceptance-buttons {
+    flex-direction: column;
+  }
+
+  .acceptance-btn {
+    min-width: 100%;
+  }
+
+  .rsvp-form-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .back-btn,
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   Mobile Responsive (480px)
+   ======================================== */
+@media (max-width: 480px) {
+  :root {
+    --mobile-header-height: 180px;
+  }
+
+  .info-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+    padding-top: 20vw;
+  }
+
+  .eucalyptus-overlay {
+    top: -20vw;
+  }
+
+  /* Typography Adjustments */
+  .wedding-details h1 {
+    font-size: 2rem;
+  }
+
+  .section-header {
+    font-size: var(--font-size-lg);
+  }
+
+  .wedding-date,
+  .wedding-time,
+  .wedding-time-divider,
+  .location-info,
+  .location-address {
+    font-size: var(--font-size-md);
+  }
+
+  .countdown-number {
+    font-size: 1.5rem;
+  }
+
+  .countdown-timer {
+    gap: var(--spacing-md);
+  }
+
+  .greeting-text {
+    font-size: var(--font-size-md);
+  }
+
+  /* Spacing Adjustments */
+  .wedding-details {
+    gap: var(--spacing-md);
+  }
+
+  .separator {
+    margin: var(--spacing-lg) 0;
+  }
+
+  .action-buttons {
+    margin-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  /* RSVP Form */
+  .rsvp-form {
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-xxl);
+  }
+
+  .rsvp-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .acceptance-section h3,
+  .dietary-section h3,
+  .anmerkung-section h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Button Adjustments */
+  .rsvp-button {
+    font-size: var(--font-size-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
+  .download-button {
+    font-size: var(--font-size-xs);
+    padding: 6px var(--spacing-sm);
+  }
+}
