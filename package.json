@@ -8,7 +8,9 @@
     "build:prod": "ng build --configuration production",
     "build:gh-pages": "ng build --configuration production --base-href /wedding-invite/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "format": "prettier --write --plugin=prettier-plugin-tailwindcss \"src/**/*.{ts,html,css,scss}\"",
+    "format:check": "prettier --check --plugin=prettier-plugin-tailwindcss \"src/**/*.{ts,html,css,scss}\""
   },
   "prettier": {
     "overrides": [
@@ -45,6 +47,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.8.2"
   }

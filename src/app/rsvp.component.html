@@ -1,100 +1,247 @@
-<div class="flex flex-col md:flex-row h-screen w-screen m-0 p-0">
-  <div class="fixed top-0 left-0 z-20 overflow-hidden w-screen h-45 sm:h-50 md:w-1/3 md:h-screen">
+<!-- Main Layout -->
+<div class="flex h-screen w-screen flex-col overflow-x-hidden md:flex-row">
+  <!-- Couple Photo Section -->
+  <section class="relative z-20 h-48 w-full md:h-full md:w-1/3">
     <img
       src="couple-photo.jpeg"
       alt="Soon to be weds"
-      class="w-full h-full object-cover object-center block"
+      class="h-full w-full object-cover"
     />
-    <img src="names.png" alt="Pamela & Elias" class="names-overlay" />
-  </div>
+    <img
+      src="names.png"
+      alt="Pamela & Elias"
+      class="absolute bottom-2 left-1/2 w-11/12 -translate-x-1/2 drop-shadow-lg invert md:bottom-8"
+    />
+  </section>
 
-  <div class="fixed top-45 left-0 w-screen h-[calc(100vh-11.25rem)] sm:top-50 sm:h-[calc(100vh-12.5rem)] md:top-0 md:left-1/3 md:w-2/3 md:h-screen bg-white flex flex-col items-center justify-start box-border overflow-y-auto pt-20 px-4 pb-4 sm:pt-10 sm:px-5 md:pt-44 md:px-10 md:pb-10">
-    <img src="eucalyptus.png" alt="Eucalyptus decoration" class="eucalyptus-overlay" />
-    <img src="olive.png" alt="Olive decoration" class="olive-overlay" />
-    <div class="text-center max-w-2xl p-5 relative z-10 w-full h-full min-h-full bg-white box-border">
-      <h2 class="font-heading rsvp-title">Antwort auf die Hochzeitseinladung</h2>
+  <!-- Content Section -->
+  <section class="relative flex flex-1 flex-col md:min-h-0">
+    <!-- Eucalyptus decoration -->
+    <img
+      src="eucalyptus.png"
+      alt="Eucalyptus decoration"
+      class="pointer-events-none absolute -top-2 w-full md:-top-72"
+    />
 
-      @if (hasAlreadySubmitted) {
-        <div class="already-submitted-message">
-          <h3 class="font-heading">Antwort bereits gesendet</h3>
-          <p class="font-body">{{ getAlreadySubmittedText() }}</p>
-          
-          <h4 class="font-heading">{{ getResponseHeaderText() }}</h4>
-          <div class="submitted-response">
-            <p class="font-body"><strong>Teilnahme:</strong> {{ getSubmittedAcceptanceText() }}</p>
-            @if (rsvpData.accepted && rsvpData.dietaryPreferences) {
-              <p class="font-body"><strong>Ernährungswünsche:</strong> {{ rsvpData.dietaryPreferences }}</p>
-            }
-            @if (rsvpData.anmerkung) {
-              <p class="font-body"><strong>Anmerkungen:</strong> {{ rsvpData.anmerkung }}</p>
-            }
-          </div>
-          
-          <p class="font-body change-notice">{{ getChangeNoticeText() }}</p>
-          
-          <div class="rsvp-form-buttons">
-            <button class="btn-outline font-heading" (click)="backToInvitation()">Zurück zur Einladung</button>
-          </div>
-        </div>
-      } @else {
-        <div class="acceptance-section">
-          <h3 class="font-heading">{{ getAttendanceQuestion() }}</h3>
-          <div class="acceptance-buttons">
-            <button
-              class="btn-outline font-heading"
-              [class.active]="rsvpData.accepted === true"
-              (click)="rsvpData.accepted = true">
-              ✓ {{ getAcceptanceText() }}
-            </button>
-            <button
-              class="btn-outline font-heading"
-              [class.active]="rsvpData.accepted === false"
-              (click)="rsvpData.accepted = false">
-              ✗ {{ getDeclineText() }}
-            </button>
-          </div>
+    <!-- Desktop spacer -->
+    <div class="hidden flex-1 shrink-0 md:block" aria-hidden="true"></div>
+
+    <!-- Mobile card container -->
+    <div class="relative z-50 mx-4 mb-16 mt-16 rounded-2xl border border-primary/20 bg-white/95 pb-4 shadow-xl md:mx-8 md:mb-12 md:mt-8 md:rounded-none md:border-none md:bg-transparent md:shadow-none">
+      <div class="relative z-10 flex flex-col items-center px-4 pb-4 pt-16 md:px-0 md:pb-6 md:pt-32">
+        <div class="mb-12 text-center">
+          <h1 class="mb-2 font-title text-5xl text-primary md:text-6xl">
+            RSVP
+          </h1>
+          <p class="font-body text-lg text-primary/80 md:text-xl">
+            Eure Antwort auf unsere Hochzeitseinladung
+          </p>
         </div>
 
-        @if (rsvpData.accepted === true) {
-          <div class="dietary-section">
-            <h3 class="font-heading">Besondere Ernährungswünsche</h3>
-            <p class="dietary-intro font-body">{{ getDietaryIntroText() }}</p>
-            <textarea
-              class="dietary-textarea font-body"
-              placeholder="z.B. Ich bin Vegetarier, die Kinder essen nur Nudeln ohne Soße..."
-              [(ngModel)]="rsvpData.dietaryPreferences"
-              rows="3">
-            </textarea>
+        @if (hasAlreadySubmitted) {
+          <!-- Already Submitted State -->
+          <div class="w-full max-w-2xl">
+            <!-- Success message -->
+            <div
+              class="mb-8 rounded-2xl border border-primary/20 bg-primary-light/10 p-6 text-center"
+            >
+              <h2 class="mb-4 font-heading text-2xl text-primary md:text-3xl">
+                Antwort bereits gesendet
+              </h2>
+              <p class="font-body text-lg text-primary-dark">
+                {{ getAlreadySubmittedText() }}
+              </p>
+            </div>
+
+            <!-- Response summary -->
+            <div class="mb-8 rounded-xl bg-white/80 p-6">
+              <h3 class="mb-4 font-heading text-xl text-primary">
+                {{ getResponseHeaderText() }}
+              </h3>
+              <div class="space-y-3 text-left">
+                <p class="font-body text-primary-dark">
+                  <strong>Teilnahme:</strong> {{ getSubmittedAcceptanceText() }}
+                </p>
+                @if (rsvpData.accepted && rsvpData.dietaryPreferences) {
+                  <p class="font-body text-primary-dark">
+                    <strong>Ernährungswünsche:</strong>
+                    {{ rsvpData.dietaryPreferences }}
+                  </p>
+                }
+                @if (rsvpData.anmerkung) {
+                  <p class="font-body text-primary-dark">
+                    <strong>Anmerkungen:</strong> {{ rsvpData.anmerkung }}
+                  </p>
+                }
+              </div>
+            </div>
+
+            <p class="mb-8 text-center font-body italic text-primary/70">
+              {{ getChangeNoticeText() }}
+            </p>
+            <div class="flex justify-center">
+              <button
+                class="btn-outline font-heading"
+                (click)="backToInvitation()"
+              >
+                Zurück zur Einladung
+              </button>
+            </div>
+          </div>
+        } @else {
+          <!-- RSVP Form -->
+          <div class="w-full max-w-2xl space-y-8">
+            <!-- Attendance Question -->
+            <section class="text-center">
+              <h2 class="mb-2 font-heading text-2xl text-primary md:text-3xl">
+                {{ getAttendanceQuestion() }}
+              </h2>
+              <p class="mb-8 font-body text-primary-dark/70">
+                Bitte wählt eine Option
+              </p>
+              <div class="flex flex-col justify-center gap-4 md:flex-row">
+                <button
+                  class="relative max-w-xs flex-1 rounded-2xl border-2 bg-white p-6 font-heading text-lg transition-all hover:shadow-lg"
+                  [class]="
+                    rsvpData.accepted === true
+                      ? 'border-green-500 bg-green-50 text-green-700 hover:border-green-600'
+                      : 'border-primary/30 text-primary hover:border-primary'
+                  "
+                  (click)="rsvpData.accepted = true"
+                >
+                  <span class="mb-2 block text-3xl">✓</span>
+                  <span class="block font-semibold">{{
+                    getAcceptanceText()
+                  }}</span>
+                </button>
+                <button
+                  class="group relative max-w-xs flex-1 rounded-2xl border-2 bg-white p-6 font-heading text-lg transition-all hover:shadow-lg"
+                  [class]="
+                    rsvpData.accepted === false
+                      ? 'border-red-500 bg-red-50 text-red-700 hover:border-red-600'
+                      : 'border-primary/30 bg-white text-primary hover:border-primary'
+                  "
+                  (click)="rsvpData.accepted = false"
+                >
+                  <span class="mb-2 block text-3xl">✗</span>
+                  <span class="block font-semibold">{{
+                    getDeclineText()
+                  }}</span>
+                </button>
+              </div>
+            </section>
+
+            <div class="mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+
+            <!-- Dietary Preferences -->
+            @if (rsvpData.accepted === true) {
+              <section class="text-center">
+                <h3 class="mb-4 font-heading text-xl text-primary md:text-2xl">
+                  Besondere Ernährungswünsche
+                </h3>
+                <p class="mb-6 font-body text-primary-dark/80">
+                  {{ getDietaryIntroText() }}
+                </p>
+                <div class="relative">
+                  <textarea
+                    class="w-full rounded-xl border-2 border-primary/20 bg-white p-4 font-body text-primary-dark shadow-sm transition-all focus:border-primary focus:shadow-lg focus:shadow-primary/20 focus:outline-none"
+                    placeholder="z.B. Ich bin Vegetarier, die Kinder essen nur Nudeln ohne Soße..."
+                    [(ngModel)]="rsvpData.dietaryPreferences"
+                    rows="4"
+                  >
+                  </textarea>
+                  <div
+                    class="absolute -top-3 left-3 bg-white px-2 font-body text-sm text-primary/60"
+                  >
+                    Optional
+                  </div>
+                </div>
+              </section>
+
+              <div class="mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+            }
+
+            <!-- Comments -->
+            <section class="text-center">
+              <h3 class="mb-4 font-heading text-xl text-primary md:text-2xl">
+                Anmerkungen
+              </h3>
+              <p class="mb-6 font-body text-primary-dark/80">
+                Habt ihr noch etwas, das ihr uns mitteilen möchtet?
+              </p>
+              <div class="relative">
+                <textarea
+                  class="w-full rounded-xl border-2 border-primary/20 bg-white p-4 font-body text-primary-dark shadow-sm transition-all focus:border-primary focus:shadow-lg focus:shadow-primary/20 focus:outline-none"
+                  [placeholder]="getCommentsPlaceholder()"
+                  [(ngModel)]="rsvpData.anmerkung"
+                  rows="4"
+                >
+                </textarea>
+                <div
+                  class="absolute -top-3 left-3 bg-white px-2 font-body text-sm text-primary/60"
+                >
+                  Optional
+                </div>
+              </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="border-t border-primary/10 pb-12 pt-8">
+              <div class="flex flex-col justify-center gap-4 md:flex-row">
+                <button
+                  class="btn-outline order-2 font-heading md:order-1"
+                  [class.btn-disabled]="isSubmitting"
+                  (click)="backToInvitation()"
+                  [disabled]="isSubmitting"
+                >
+                  Zurück zur Einladung
+                </button>
+                <button
+                  class="btn-primary relative order-1 font-heading md:order-2"
+                  [class.loading]="isSubmitting"
+                  [class.btn-disabled]="isSubmitting"
+                  [disabled]="isSubmitting"
+                  (click)="submitRsvp()"
+                >
+                  @if (isSubmitting) {
+                    <span class="loading-spinner mr-2"></span>
+                    Wird gesendet...
+                  } @else {
+                    Antwort senden
+                  }
+                </button>
+              </div>
+              <p class="mt-4 text-center font-body text-sm text-primary/60">
+                Eure Antwort wird sicher übertragen und gespeichert
+              </p>
+            </section>
           </div>
         }
-
-        <div class="anmerkung-section">
-          <h3 class="font-heading">Anmerkungen</h3>
-          <textarea
-            class="anmerkung-textarea font-body"
-            [placeholder]="getCommentsPlaceholder()"
-            [(ngModel)]="rsvpData.anmerkung"
-            rows="4">
-          </textarea>
-        </div>
-
-        <div class="rsvp-form-buttons">
-          <button class="btn-outline font-heading" [class.btn-disabled]="isSubmitting" (click)="backToInvitation()" [disabled]="isSubmitting">Zurück</button>
-          <button 
-            class="btn-primary font-heading" 
-            [class.loading]="isSubmitting"
-            [class.btn-disabled]="isSubmitting"
-            [disabled]="isSubmitting"
-            (click)="submitRsvp()">
-            @if (isSubmitting) {
-              <span class="loading-spinner"></span>
-              Wird gesendet...
-            } @else {
-              Antwort senden
-            }
-          </button>
-        </div>
-      }
+      </div>
     </div>
-  </div>
+
+    <!-- Mobile side olive decoration -->
+    <img
+      src="olive_side.png"
+      alt="Olive side decoration"
+      class="pointer-events-none absolute -left-8 top-[30%] h-32 rotate-45 scale-[2] md:hidden"
+    />
+    <img
+      src="olive_side.png"
+      alt="Olive side decoration"
+      class="pointer-events-none absolute -right-8 top-[45%] h-32 rotate-[120deg] scale-[-1.75] md:hidden"
+    />
+    <img
+      src="olive_side.png"
+      alt="Olive side decoration"
+      class="pointer-events-none absolute -left-8 top-[65%] h-32 rotate-[135deg] scale-[2] md:hidden"
+    />
+
+    <!-- Mobile bottom eucalyptus -->
+    <img
+      src="eucalyptos_bottom.png"
+      alt="Eucalyptus bottom decoration"
+      class="pointer-events-none absolute bottom-0 w-full md:hidden"
+    />
+  </section>
 </div>

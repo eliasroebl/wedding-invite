@@ -1,181 +1,154 @@
-<!-- Main Layout: Mobile vertical stack, Desktop side-by-side -->
-<div class="flex flex-col md:flex-row h-screen w-screen">
-
-  <!-- Left Section: Couple Photo with Names Overlay -->
-  <section class="w-full h-48 md:w-1/3 md:h-full relative z-20">
-    <!-- Background couple photo -->
+<!-- Main Layout -->
+<div class="flex h-screen w-screen flex-col overflow-x-hidden md:flex-row">
+  <!-- Couple Photo Section -->
+  <section class="relative z-20 h-48 w-full md:h-full md:w-1/3">
     <img
       src="couple-photo.jpeg"
       alt="Soon to be weds"
-      class="w-full h-full object-cover object-center"
+      class="h-full w-full object-cover"
     />
-
-    <!-- Names overlay positioned at bottom center -->
     <img
       src="names.png"
       alt="Pamela & Elias"
-      class="absolute bottom-2 md:bottom-8 left-1/2 -translate-x-1/2 w-11/12 invert drop-shadow-lg"
+      class="absolute bottom-2 left-1/2 w-11/12 -translate-x-1/2 drop-shadow-lg invert md:bottom-8"
     />
   </section>
 
-  <!-- Right Section: Content with Eucalyptus Background -->
-  <section class="flex-1 relative flex flex-col min-h-screen md:min-h-0">
-    <!-- Eucalyptus decoration background -->
+  <!-- Content Section -->
+  <section class="relative flex flex-1 flex-col md:min-h-0">
+    <!-- Eucalyptus decoration -->
     <img
       src="eucalyptus.png"
       alt="Eucalyptus decoration"
-      class="absolute top-0 md:absolute md:-top-72 -top-12 w-full z-0 pointer-events-none"
+      class="pointer-events-none absolute -top-2 w-full md:-top-72"
     />
 
-    <!-- Desktop-only top spacer -->
-    <div class="hidden md:block md:flex-1 md:shrink-0" aria-hidden="true"></div>
+    <!-- Desktop spacer -->
+    <div class="hidden flex-1 shrink-0 md:block" aria-hidden="true"></div>
 
-    <!-- Main title and greeting container -->
-    <div class="flex flex-1 flex-col items-center justify-start mt-45 md:mt-48 px-4 md:px-0 relative z-10">
-      <h1 class="text-primary font-title text-5xl md:text-6xl mb-6">Wir heiraten</h1>
+    <!-- Mobile card container -->
+    <div
+      class="relative z-50 mx-4 mb-16 mt-16 rounded-2xl border border-primary/20 bg-white/95 pb-4 shadow-xl md:mx-8 md:mb-12 md:mt-8 md:rounded-none md:border-none md:bg-transparent md:shadow-none"
+    >
+      <div
+        class="relative z-10 flex flex-col items-center px-4 pb-4 pt-16 md:px-0 md:pb-6 md:pt-32"
+      >
+        <h1 class="mb-6 font-title text-5xl text-primary md:text-6xl">
+          Wir heiraten
+        </h1>
 
-      <!-- Personalized greeting -->
-      @if (showPersonalizedContent && personalizedGreeting) {
-        <div class="mx-0 md:mx-8 p-4 md:p-6 bg-primary-light/10 border border-primary/20 rounded-2xl backdrop-blur-sm">
-          <p class="font-heading text-primary text-xl md:text-2xl leading-relaxed text-center italic whitespace-pre-line">{{ personalizedGreeting }}</p>
-        </div>
-      }
-
-      <!-- Date and Countdown Section -->
-      <div class="flex flex-col gap-10 md:gap-12 mt-12 md:mt-12 pb-16 md:pb-0">
-        <section class="px-4 md:px-8 text-center">
-          <h3 class="font-heading text-primary text-3xl md:text-4xl mb-6">Wann?</h3>
-          <div class="flex items-center justify-center gap-4 flex-wrap text-2xl md:text-3xl text-primary-dark">
-            <span class="font-heading">06. September 2025</span>
-            <span>•</span>
-            <span class="font-heading">14:00 Uhr</span>
+        @if (showPersonalizedContent && personalizedGreeting) {
+          <div
+            class="rounded-2xl border border-primary/20 bg-primary-light/10 p-4 backdrop-blur-sm md:mx-8 md:p-6"
+          >
+            <p
+              class="whitespace-pre-line text-center font-heading text-xl italic text-primary md:text-2xl"
+            >
+              {{ personalizedGreeting }}
+            </p>
           </div>
-        </section>
+        }
 
-        <!-- Countdown Timer -->
-        <section class="flex justify-center gap-6 md:gap-10 flex-wrap px-4">
-          <div class="countdown-item">
-            <span class="countdown-number" id="days">0</span>
-            <span class="countdown-label">Tage</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="hours">0</span>
-            <span class="countdown-label">Stunden</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="minutes">0</span>
-            <span class="countdown-label">Minuten</span>
-          </div>
-        </section>
+        <!-- Main content sections -->
+        <div class="mt-12 flex flex-col gap-10 pb-16 md:gap-10 md:pb-0">
+          <!-- Date Section -->
+          <section class="px-4 text-center md:px-8">
+            <h3 class="mb-6 font-heading text-3xl text-primary md:text-4xl">
+              Wann?
+            </h3>
+            <div
+              class="flex flex-wrap items-center justify-center gap-4 text-2xl text-primary-dark md:text-3xl"
+            >
+              <span class="font-heading">06. September 2025</span>
+              <span>•</span>
+              <span class="font-heading">14:00 Uhr</span>
+            </div>
+          </section>
 
-        <!-- Separator -->
-        <div class="w-3/4 md:w-screen md:max-w-lg h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full md:-mx-8"></div>
+          <!-- Countdown Timer -->
+          <section class="flex flex-wrap justify-center gap-6 px-4 md:gap-10">
+            <div class="countdown-item">
+              <span class="countdown-number" id="days">0</span>
+              <span class="countdown-label">Tage</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="hours">0</span>
+              <span class="countdown-label">Stunden</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="minutes">0</span>
+              <span class="countdown-label">Minuten</span>
+            </div>
+          </section>
 
-        <!-- Location Section -->
-        <section class="px-4 md:px-8 text-center">
-          <h3 class="font-heading text-primary text-3xl md:text-4xl mb-6">Wo?</h3>
-          <p class="font-heading text-primary-dark text-2xl md:text-3xl mb-4">Kletzmayr Hof</p>
-          <p class="font-body text-primary-dark text-lg md:text-xl leading-relaxed">Niederschöfring 22, 4502 St.Marien</p>
-        </section>
+          <div class="mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
 
-        <!-- Action Buttons Section -->
-        <section class="flex flex-col items-center gap-4 px-4 md:px-8">
-          @if (showPersonalizedContent) {
-            @if (hasAlreadySubmitted) {
-              <div class="mx-4 md:mx-8 p-6 bg-primary-light/10 border border-primary/20 rounded-2xl backdrop-blur-sm text-center">
-                <p class="font-heading text-primary text-lg md:text-xl leading-relaxed italic whitespace-pre-line">{{ getThankYouMessage() }}</p>
-              </div>
-            } @else {
-              <button class="btn-primary font-heading" (click)="goToRsvp()">Antworten</button>
+          <!-- Location Section -->
+          <section class="px-4 text-center md:px-8">
+            <h3 class="mb-6 font-heading text-3xl text-primary md:text-4xl">
+              Wo?
+            </h3>
+            <p class="mb-4 font-heading text-2xl text-primary-dark md:text-3xl">
+              Kletzmayr Hof
+            </p>
+            <p class="font-body text-lg text-primary-dark md:text-xl">
+              Niederschöfring 22, 4502 St.Marien
+            </p>
+          </section>
+
+          <!-- Action Buttons Section -->
+          <section class="flex flex-col items-center gap-4 px-4 md:px-8">
+            @if (showPersonalizedContent) {
+              @if (hasAlreadySubmitted) {
+                <div
+                  class="mx-4 rounded-2xl border border-primary/20 bg-primary-light/10 p-6 text-center md:mx-8"
+                >
+                  <p
+                    class="whitespace-pre-line font-heading text-lg italic text-primary md:text-xl"
+                  >
+                    {{ getThankYouMessage() }}
+                  </p>
+                </div>
+              } @else {
+                <button class="btn-primary font-heading" (click)="goToRsvp()">
+                  Antworten
+                </button>
+              }
             }
-          }
-
-          <!-- Secondary action - download -->
-          <a href="wedding-invite.jpg" download="Pamela-Elias-Hochzeitseinladung.jpg" class="text-primary/70 hover:text-primary underline text-sm font-body transition-colors">
-            Einladung herunterladen
-          </a>
-        </section>
+            <a
+              href="wedding-invite.jpg"
+              download="Pamela-Elias-Hochzeitseinladung.jpg"
+              class="font-body text-sm text-primary/70 underline hover:text-primary"
+            >
+              Einladung herunterladen
+            </a>
+          </section>
+        </div>
       </div>
-
     </div>
 
-    <!-- Bottom spacer for mobile and desktop -->
-    <div class="flex-1 md:flex-1" aria-hidden="true"></div>
+    <!-- Mobile side olive decoration -->
+    <img
+      src="olive_side.png"
+      alt="Olive side decoration"
+      class="pointer-events-none absolute -left-8 top-[30%] h-32 rotate-45 scale-[2] md:hidden"
+    />
+    <img
+      src="olive_side.png"
+      alt="Olive side decoration"
+      class="pointer-events-none absolute -right-8 top-[45%] h-32 rotate-[120deg] scale-[-1.75] md:hidden"
+    />
+    <img
+      src="olive_side.png"
+      alt="Olive side decoration"
+      class="pointer-events-none absolute -left-8 top-[65%] h-32 rotate-[135deg] scale-[2] md:hidden"
+    />
+
+    <!-- Mobile bottom eucalyptus -->
+    <img
+      src="eucalyptos_bottom.png"
+      alt="Eucalyptus bottom decoration"
+      class="pointer-events-none absolute bottom-0 w-full md:hidden"
+    />
   </section>
 </div>
-
-
-
-
-<!--<div class="flex flex-col md:flex-row h-screen w-screen m-0 p-0">
-  <div class="fixed top-0 left-0 z-20 overflow-hidden w-screen h-45 sm:h-50 md:w-1/3 md:h-screen">
-    <img
-      src="couple-photo.jpeg"
-      alt="Soon to be weds"
-      class="w-full h-full object-cover object-center block"
-    />
-    <img src="names.png" alt="Pamela & Elias" class="names-overlay" />
-  </div>
-
-  <div class="fixed top-45 left-0 w-screen h-[calc(100vh-11.25rem)] sm:top-50 sm:h-[calc(100vh-12.5rem)] md:top-0 md:left-1/3 md:w-2/3 md:h-screen bg-white flex flex-col items-center justify-start box-border overflow-y-auto pt-20 px-4 pb-4 sm:pt-10 sm:px-5 md:pt-44 md:px-10 md:pb-10">
-    <img src="eucalyptus.png" alt="Eucalyptus decoration" class="eucalyptus-overlay" />
-    <img src="olive.png" alt="Olive decoration" class="olive-overlay" />
-    <div class="text-center max-w-2xl p-5 relative z-10">
-      <h1 class="font-title text-4xl md:text-5xl text-primary mb-4 mt-16 sm:mt-20" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">Wir heiraten!</h1>
-
-      @if (showPersonalizedContent && personalizedGreeting) {
-        <div class="personalized-greeting">
-          <p class="font-heading greeting-text">{{ personalizedGreeting }}</p>
-        </div>
-      }
-
-      <div class="date-section">
-        <h3 class="font-heading section-header">Wann?</h3>
-        <div class="date-time-container">
-          <span class="font-heading wedding-date">06. September 2025</span>
-          <span class="wedding-time-divider">•</span>
-          <span class="font-heading wedding-time">14:00 Uhr</span>
-        </div>
-      </div>
-
-      <div class="countdown-timer">
-        <div class="countdown-item">
-          <span class="countdown-number font-heading" id="days">0</span>
-          <span class="countdown-label font-body">Tage</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number font-heading" id="hours">0</span>
-          <span class="countdown-label font-body">Stunden</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number font-heading" id="minutes">0</span>
-          <span class="countdown-label font-body">Minuten</span>
-        </div>
-      </div>
-
-      <div class="separator"></div>
-
-      <div class="location-section">
-        <h3 class="font-heading section-header">Wo?</h3>
-        <p class="font-heading location-info">Kletzmayr Hof</p>
-        <p class="font-body location-address">Niederschöfring 22, 4502 St.Marien</p>
-      </div>
-
-      <div class="action-buttons">
-        <a href="wedding-invite.jpg" download="Pamela-Elias-Hochzeitseinladung.jpg" class="btn-outline font-body">
-          Einladung herunterladen
-        </a>
-        @if (showPersonalizedContent) {
-          @if (hasAlreadySubmitted) {
-            <div class="thank-you-text">
-              <p class="font-heading greeting-text" style="white-space: pre-line;">{{ getThankYouMessage() }}</p>
-            </div>
-          } @else {
-            <button class="btn-primary font-heading" (click)="goToRsvp()">Antworten</button>
-          }
-        }
-      </div>
-    </div>
-  </div>
-</div>
--->
