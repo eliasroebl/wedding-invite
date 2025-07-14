@@ -8,21 +8,21 @@
 /* Font Face Declarations */
 @font-face {
   font-family: 'Olympian Roman';
-  src: url('/fonts/Olympian Roman/Olympian Roman.otf') format('opentype');
+  src: url('assets/fonts/Olympian Roman/OlympianRoman.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'American Oak Script';
-  src: url('/fonts/american-oak-font-1751206833-0/americanoak-script.ttf') format('truetype');
+  src: url('assets/fonts/american-oak-font-1751206833-0/americanoak-script.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'American Oak Serif';
-  src: url('/fonts/american-oak-font-1751206833-0/americanoak-serif.ttf') format('truetype');
+  src: url('assets/fonts/american-oak-font-1751206833-0/americanoak-serif.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
