@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslationService, Translation } from './translation.service';
 
 @Component({
   selector: 'app-rsvp',
@@ -20,6 +21,7 @@ export class RsvpComponent implements OnInit {
     dietaryPreferences: '',
     anmerkung: ''
   };
+  protected t: Translation;
 
   // Google Apps Script Web App URL
   private readonly GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjJN8k-qcZzVUX3uBtZLy-DPoGaSRD6pmfgXD6j9qV_6DdJhIixhCNMyzlEgvMOgXNOg/exec';
@@ -27,8 +29,11 @@ export class RsvpComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
-    private router: Router
-  ) {}
+    private router: Router,
+    private translationService: TranslationService
+  ) {
+    this.t = this.translationService.getTranslation('de'); // Default to German
+  }
 
   ngOnInit() {
     this.loadGuestData();
@@ -48,6 +53,8 @@ export class RsvpComponent implements OnInit {
 
         if (guest) {
           this.currentGuest = guest;
+          // Set translation based on guest's language
+          this.t = this.translationService.getTranslation(guest.language || 'de');
           this.checkExistingSubmission();
         } else {
           // If no guest found, redirect back to invitation
@@ -129,78 +136,106 @@ export class RsvpComponent implements OnInit {
   }
 
   protected getAttendanceQuestion(): string {
-    if (!this.currentGuest) return 'Könnt ihr an unserer Hochzeit teilnehmen?';
+    if (!this.currentGuest) return this.t.attendanceQuestion.plural;
     return this.currentGuest.overallCount === 1 
-      ? 'Kannst du an unserer Hochzeit teilnehmen?'
-      : 'Könnt ihr an unserer Hochzeit teilnehmen?';
+      ? this.t.attendanceQuestion.singular
+      : this.t.attendanceQuestion.plural;
   }
 
   protected getAcceptanceText(): string {
-    if (!this.currentGuest) return 'Ja, wir kommen gerne!';
+    if (!this.currentGuest) return this.t.acceptanceText.plural;
     return this.currentGuest.overallCount === 1
-      ? 'Ja, ich komme gerne!'
-      : 'Ja, wir kommen gerne!';
+      ? this.t.acceptanceText.singular
+      : this.t.acceptanceText.plural;
   }
 
   protected getDeclineText(): string {
-    if (!this.currentGuest) return 'Leider können wir nicht kommen';
+    if (!this.currentGuest) return this.t.declineText.plural;
     return this.currentGuest.overallCount === 1
-      ? 'Leider kann ich nicht kommen'
-      : 'Leider können wir nicht kommen';
+      ? this.t.declineText.singular
+      : this.t.declineText.plural;
   }
 
   protected getDietaryIntroText(): string {
-    if (!this.currentGuest) return 'Falls ihr besondere Ernährungswünsche habt, teilt sie uns gerne mit:';
+    if (!this.currentGuest) return this.t.dietaryIntroText.plural;
     return this.currentGuest.overallCount === 1
-      ? 'Falls du besondere Ernährungswünsche hast, teile sie uns gerne mit:'
-      : 'Falls ihr besondere Ernährungswünsche habt, teilt sie uns gerne mit:';
+      ? this.t.dietaryIntroText.singular
+      : this.t.dietaryIntroText.plural;
   }
 
   protected getCommentsPlaceholder(): string {
-    if (!this.currentGuest) return 'Hier könnt ihr uns alles mitteilen, was ihr uns wissen lassen möchtet...';
+    if (!this.currentGuest) return this.t.commentsPlaceholder.plural;
     return this.currentGuest.overallCount === 1
-      ? 'Hier kannst du uns alles mitteilen, was du uns wissen lassen möchtest...'
-      : 'Hier könnt ihr uns alles mitteilen, was ihr uns wissen lassen möchtet...';
+      ? this.t.commentsPlaceholder.singular
+      : this.t.commentsPlaceholder.plural;
   }
 
   protected getAlreadySubmittedText(): string {
-    if (!this.currentGuest) return 'Vielen Dank! Ihr habt bereits eine Antwort auf unsere Hochzeitseinladung gesendet.';
+    if (!this.currentGuest) return this.t.alreadySubmittedText.plural;
     return this.currentGuest.overallCount === 1
-      ? 'Vielen Dank! Du hast bereits eine Antwort auf unsere Hochzeitseinladung gesendet.'
-      : 'Vielen Dank! Ihr habt bereits eine Antwort auf unsere Hochzeitseinladung gesendet.';
+      ? this.t.alreadySubmittedText.singular
+      : this.t.alreadySubmittedText.plural;
   }
 
   protected getResponseHeaderText(): string {
-    if (!this.currentGuest) return 'Eure Antwort:';
+    if (!this.currentGuest) return this.t.responseHeaderText.plural;
     return this.currentGuest.overallCount === 1
-      ? 'Deine Antwort:'
-      : 'Eure Antwort:';
+      ? this.t.responseHeaderText.singular
+      : this.t.responseHeaderText.plural;
   }
 
   protected getChangeNoticeText(): string {
-    if (!this.currentGuest) return 'Falls ihr Änderungen vornehmen möchtet, kontaktiert uns bitte direkt.';
+    if (!this.currentGuest) return this.t.changeNoticeText.plural;
     return this.currentGuest.overallCount === 1
-      ? 'Falls du Änderungen vornehmen möchtest, kontaktiere uns bitte direkt.'
-      : 'Falls ihr Änderungen vornehmen möchtet, kontaktiert uns bitte direkt.';
+      ? this.t.changeNoticeText.singular
+      : this.t.changeNoticeText.plural;
   }
 
   protected getSubmittedAcceptanceText(): string {
-    if (!this.currentGuest) return this.rsvpData.accepted ? 'Ja, wir kommen gerne!' : 'Leider können wir nicht kommen';
+    if (!this.currentGuest) return this.rsvpData.accepted ? this.t.acceptanceText.plural : this.t.declineText.plural;
     if (this.currentGuest.overallCount === 1) {
-      return this.rsvpData.accepted ? 'Ja, ich komme gerne!' : 'Leider kann ich nicht kommen';
+      return this.rsvpData.accepted ? this.t.acceptanceText.singular : this.t.declineText.singular;
     } else {
-      return this.rsvpData.accepted ? 'Ja, wir kommen gerne!' : 'Leider können wir nicht kommen';
+      return this.rsvpData.accepted ? this.t.acceptanceText.plural : this.t.declineText.plural;
     }
+  }
+
+  protected getRsvpSubtitle(): string {
+    if (!this.currentGuest) return this.t.rsvpSubtitle.plural;
+    return this.currentGuest.overallCount === 1
+      ? this.t.rsvpSubtitle.singular
+      : this.t.rsvpSubtitle.plural;
+  }
+
+  protected getPleaseChoose(): string {
+    if (!this.currentGuest) return this.t.pleaseChoose.plural;
+    return this.currentGuest.overallCount === 1
+      ? this.t.pleaseChoose.singular
+      : this.t.pleaseChoose.plural;
+  }
+
+  protected getCommentsIntroText(): string {
+    if (!this.currentGuest) return this.t.commentsIntroText.plural;
+    return this.currentGuest.overallCount === 1
+      ? this.t.commentsIntroText.singular
+      : this.t.commentsIntroText.plural;
+  }
+
+  protected getDietaryPlaceholder(): string {
+    if (!this.currentGuest) return this.t.dietaryPlaceholder.plural;
+    return this.currentGuest.overallCount === 1
+      ? this.t.dietaryPlaceholder.singular
+      : this.t.dietaryPlaceholder.plural;
   }
 
   protected submitRsvp() {
     if (!this.currentGuest) {
-      alert('Fehler: Keine Gästedaten gefunden.');
+      alert(this.t.errorNoGuestData);
       return;
     }
 
     if (this.hasAlreadySubmitted) {
-      alert('Sie haben bereits eine Antwort gesendet. Wenn Sie Änderungen vornehmen möchten, kontaktieren Sie uns bitte direkt.');
+      alert(this.t.errorAlreadySubmitted);
       return;
     }
 
@@ -228,10 +263,10 @@ export class RsvpComponent implements OnInit {
       this.isSubmitting = false; // Reset loading state
       
       if (response.status === 'success') {
-        alert('Vielen Dank für Ihre Antwort! Ihre RSVP wurde erfolgreich gespeichert.');
+        alert(this.t.successMessage);
         this.backToInvitation();
       } else {
-        alert('Es gab ein Problem beim Speichern. Bitte versuchen Sie es erneut.');
+        alert(this.t.errorSaving);
       }
       // Clean up
       document.head.removeChild(script);
@@ -253,7 +288,7 @@ export class RsvpComponent implements OnInit {
     script.src = `${this.GOOGLE_SCRIPT_URL}?${params.toString()}`;
     script.onerror = () => {
       this.isSubmitting = false; // Reset loading state on error
-      alert('Es gab ein Problem beim Speichern. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.');
+      alert(this.t.errorSavingContactUs);
       document.head.removeChild(script);
       delete (window as any)[callbackName];
     };

@@ -34,7 +34,7 @@
         class="relative z-10 flex flex-col items-center px-4 pb-4 pt-16 md:px-0 md:pb-6 md:pt-32"
       >
         <h1 class="mb-6 font-title text-5xl text-primary md:text-6xl">
-          Wir heiraten
+          {{ t.weAreGettingMarried }}
         </h1>
 
         @if (showPersonalizedContent && personalizedGreeting) {
@@ -54,7 +54,7 @@
           <!-- Date Section -->
           <section class="px-4 text-center md:px-8">
             <h3 class="mb-6 font-heading text-3xl text-primary md:text-4xl">
-              Wann?
+              {{ t.when }}
             </h3>
             <div
               class="flex flex-wrap items-center justify-center gap-4 text-2xl text-primary-dark md:text-3xl"
@@ -69,15 +69,15 @@
           <section class="flex flex-wrap justify-center gap-6 px-4 md:gap-10">
             <div class="countdown-item">
               <span class="countdown-number" id="days">0</span>
-              <span class="countdown-label">Tage</span>
+              <span class="countdown-label">{{ t.days }}</span>
             </div>
             <div class="countdown-item">
               <span class="countdown-number" id="hours">0</span>
-              <span class="countdown-label">Stunden</span>
+              <span class="countdown-label">{{ t.hours }}</span>
             </div>
             <div class="countdown-item">
               <span class="countdown-number" id="minutes">0</span>
-              <span class="countdown-label">Minuten</span>
+              <span class="countdown-label">{{ t.minutes }}</span>
             </div>
           </section>
 
@@ -86,13 +86,13 @@
           <!-- Location Section -->
           <section class="px-4 text-center md:px-8">
             <h3 class="mb-6 font-heading text-3xl text-primary md:text-4xl">
-              Wo?
+              {{ t.where }}
             </h3>
             <p class="mb-4 font-heading text-2xl text-primary-dark md:text-3xl">
-              Kletzmayr Hof
+              {{ t.kletzmayrHof }}
             </p>
             <p class="font-body text-lg text-primary-dark md:text-xl">
-              Niederschöfring 22, 4502 St.Marien
+              {{ t.address }}
             </p>
           </section>
 
@@ -111,7 +111,7 @@
                 </div>
               } @else {
                 <button class="btn-primary font-heading" (click)="goToRsvp()">
-                  Antworten
+                  {{ t.respond }}
                 </button>
               }
             }
@@ -120,7 +120,7 @@
               download="Pamela-Elias-Hochzeitseinladung.jpg"
               class="font-body text-sm text-primary/70 underline hover:text-primary"
             >
-              Einladung herunterladen
+              {{ t.downloadInvitation }}
             </a>
           </section>
         </div>

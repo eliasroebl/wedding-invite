@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslationService, Translation } from './translation.service';
 
 @Component({
   selector: 'app-invitation',
@@ -17,6 +18,7 @@ export class InvitationComponent implements OnInit, OnDestroy {
   protected currentGuest: any = null;
   protected hasAlreadySubmitted = false;
   protected rsvpResponse: any = null;
+  protected t: Translation;
   
   // Google Apps Script Web App URL
   private readonly GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjJN8k-qcZzVUX3uBtZLy-DPoGaSRD6pmfgXD6j9qV_6DdJhIixhCNMyzlEgvMOgXNOg/exec';
@@ -24,8 +26,11 @@ export class InvitationComponent implements OnInit, OnDestroy {
   constructor(
     private http: HttpClient, 
     private route: ActivatedRoute,
-    private router: Router
-  ) {}
+    private router: Router,
+    private translationService: TranslationService
+  ) {
+    this.t = this.translationService.getTranslation('de'); // Default to German
+  }
 
   ngOnInit() {
     this.startCountdown();
@@ -87,6 +92,8 @@ export class InvitationComponent implements OnInit, OnDestroy {
         
         // Only show personalized content if guest is found
         if (guest) {
+          // Set translation based on guest's language
+          this.t = this.translationService.getTranslation(guest.language || 'de');
           this.personalizedGreeting = this.generateGreeting(guest);
           this.showPersonalizedContent = true;
           this.currentGuest = guest;
@@ -111,14 +118,14 @@ export class InvitationComponent implements OnInit, OnDestroy {
     // Add female greetings
     if (femaleInvitees.length > 0) {
       const femaleNames = femaleInvitees.map((inv: any) => inv.inviteeName.split(' ')[0]);
-      greeting += `Liebe ${femaleNames.join(', ')}`;
+      greeting += `${this.t.dear.female} ${femaleNames.join(', ')}`;
     }
     
     // Add male greetings
     if (maleInvitees.length > 0) {
       const maleNames = maleInvitees.map((inv: any) => inv.inviteeName.split(' ')[0]);
       if (greeting) greeting += ', ';
-      greeting += `Lieber ${maleNames.join(', ')}`;
+      greeting += `${this.t.dear.male} ${maleNames.join(', ')}`;
     }
     
     // Add children if any
@@ -126,17 +133,17 @@ export class InvitationComponent implements OnInit, OnDestroy {
     if (guest.children && guest.children.length > 0) {
       const childrenFirstNames = guest.children.map((child: string) => child.split(' ')[0]);
       if (childrenFirstNames.length === 1) {
-        childrenText = ` sowie ${childrenFirstNames[0]}`;
+        childrenText = ` ${this.t.asWellAs} ${childrenFirstNames[0]}`;
       } else if (childrenFirstNames.length === 2) {
-        childrenText = ` sowie ${childrenFirstNames.join(' und ')}`;
+        childrenText = ` ${this.t.asWellAs} ${childrenFirstNames.join(` ${this.t.and} `)}`;
       } else {
         const lastChild = childrenFirstNames.pop();
-        childrenText = ` sowie ${childrenFirstNames.join(', ')} und ${lastChild}`;
+        childrenText = ` ${this.t.asWellAs} ${childrenFirstNames.join(', ')} ${this.t.and} ${lastChild}`;
       }
     }
     
-    const pronoun = guest.overallCount === 1 ? 'dich' : 'euch';
-    return `${greeting},\nhiermit laden wir ${pronoun}${childrenText} herzlich zu unserer Hochzeit ein.`;
+    const invitationText = guest.overallCount === 1 ? this.t.invitationText.singular : this.t.invitationText.plural;
+    return `${greeting},\n${invitationText}${childrenText}`;
   }
 
   private checkExistingSubmission() {
@@ -190,25 +197,25 @@ export class InvitationComponent implements OnInit, OnDestroy {
   protected getThankYouMessage(): string {
     if (!this.currentGuest || !this.rsvpResponse) {
       return this.currentGuest?.overallCount === 1 
-        ? '✓ Danke für deine Rückmeldung!'
-        : '✓ Danke für eure Rückmeldung!';
+        ? this.t.thankYouMessage.singular
+        : this.t.thankYouMessage.plural;
     }
 
     const isAccepted = this.rsvpResponse.accepted === 'Ja';
     const isSingular = this.currentGuest.overallCount === 1;
     
     let thankYouText = isSingular 
-      ? '✓ Danke für deine Rückmeldung!'
-      : '✓ Danke für eure Rückmeldung!';
+      ? this.t.thankYouMessage.singular
+      : this.t.thankYouMessage.plural;
     
     if (isAccepted) {
-      thankYouText += isSingular 
-        ? '\nWir freuen uns auf dich!'
-        : '\nWir freuen uns auf euch!';
+      thankYouText += '\n' + (isSingular 
+        ? this.t.lookingForward.singular
+        : this.t.lookingForward.plural);
     } else {
-      thankYouText += isSingular
-        ? '\nSchade, dass du nicht kommen kannst.'
-        : '\nSchade, dass ihr nicht kommen könnt.';
+      thankYouText += '\n' + (isSingular
+        ? this.t.sadCantCome.singular
+        : this.t.sadCantCome.plural);
     }
     
     return thankYouText;

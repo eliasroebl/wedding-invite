@@ -79,3 +79,7 @@ ng generate component component-name
 - **Production**: Optimized for performance with bundle budgets:
   - Initial bundle: max 1MB (warning at 500kB)
   - Component styles: max 8kB (warning at 4kB)
+
+## Data Management Guidelines
+- **Guest List Synchronization**: 
+  * Whenever you add an entry to the guest-list.json, update the guest-list.csv accordingly

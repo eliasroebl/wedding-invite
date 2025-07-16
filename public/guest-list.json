@@ -1,6 +1,7 @@
 [
   {
     "inviteeId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "language": "de",
     "invitees": [{
       "inviteeName": "Georg Gruber",
       "gender": "Male"
@@ -13,29 +14,8 @@
     "overallCount": 5
   },
   {
-    "inviteeId": "b2c3d4e5-f6g7-8901-bcde-f23456789012",
-    "invitees": [{
-      "inviteeName": "Peter Schmidt",
-      "gender": "Male"
-    }],
-    "children": [],
-    "overallCount": 1
-  },
-  {
-    "inviteeId": "c3d4e5f6-g7h8-9012-cdef-345678901234",
-    "invitees": [{
-      "inviteeName": "Anna Weber",
-      "gender": "Female"
-    },
-    {
-      "inviteeName": "Thomas Weber",
-      "gender": "Male"
-    }],
-    "children": ["Sophie Weber"],
-    "overallCount": 3
-  },
-  {
     "inviteeId": "6272e7a0-f6d1-451f-9a8b-c8f62de0ca8b",
+    "language": "de",
     "invitees": [{
       "inviteeName": "Laura Astleithner",
       "gender": "Female"
@@ -45,5 +25,876 @@
         "gender": "Male"
       }],
     "overallCount": 2
+  },
+  {
+    "inviteeId": "f3e4d5c6-b7a8-9012-3456-789abcdef012",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Alois Röbl",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Ursula Röbl",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "d7e8f9a0-b1c2-3456-7890-abcdef123456",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Christian Röbl",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e9f0a1b2-c3d4-5678-90ab-cdef12345678",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "David Röbl",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Anna Röbl",
+      "gender": "Female"
+    }],
+    "children": ["Samuel Röbl"],
+    "overallCount": 3
+  },
+  {
+    "inviteeId": "f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Benjamin Röbl",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Saskia Leier",
+      "gender": "Female"
+    }],
+    "children": ["Emilian Leier", "Yara Leier", "Lio"],
+    "overallCount": 5
+  },
+  {
+    "inviteeId": "a2b3c4d5-e6f7-8901-2345-678901234567",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Gerhard Grager",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "b3c4d5e6-f7a8-9012-3456-789012345678",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Christian Grager",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "c4d5e6f7-a8b9-0123-4567-890123456789",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Volker Grager",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Trude Grager",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "d5e6f7a8-b9c0-1234-5678-901234567890",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Doris Röbl",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "Hubert Röbl",
+      "gender": "Male"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "e6f7a8b9-c0d1-2345-6789-012345678901",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "David Röbl",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "f7a8b9c0-d1e2-3456-7890-123456789012",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Klara Röbl",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "a8b9c0d1-e2f3-4567-8901-234567890123",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Marianne Röbl",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "Karl Röbl",
+      "gender": "Male"
+    }],
+    "children": ["Florian Röbl", "Michael Röbl"],
+    "overallCount": 4
+  },
+  {
+    "inviteeId": "b9c0d1e2-f3a4-5678-9012-345678901234",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Hans Röbl",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Helga Röbl",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "c0d1e2f3-a4b5-6789-0123-456789012345",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Franz Röbl",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d1e2f3a4-b5c6-7890-1234-567890123456",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Clara Astleithner",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e2f3a4b5-c6d7-8901-2345-678901234567",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Rahel Wozabal",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "f3a4b5c6-d7e8-9012-3456-789012345678",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Rebecca Wozabal",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "a4b5c6d7-e8f9-0123-4567-890123456789",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Elias Beuer",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "b5c6d7e8-f9a0-1234-5678-901234567890",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Timo Beuer",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "c6d7e8f9-a0b1-2345-6789-012345678901",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Dominik Obereigner",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d7e8f9a0-b1c2-3456-7890-123456789012",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Daniel Obereigner",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e8f9a0b1-c2d3-4567-8901-234567890123",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "David Obereigner",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "f9a0b1c2-d3e4-5678-9012-345678901234",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Christina Castello",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "a0b1c2d3-e4f5-6789-0123-456789012345",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Christina Stroh",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "b1c2d3e4-f5a6-7890-1234-567890123456",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Hanna Astleithner",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "c2d3e4f5-a6b7-8901-2345-678901234567",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Tabea Milkovic",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d3e4f5a6-b7c8-9012-3456-789012345678",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Ruth Krämer",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "Daniel Krämer",
+      "gender": "Male"
+    }],
+    "children": ["Joel Krämer", "Jonas Krämer"],
+    "overallCount": 4
+  },
+  {
+    "inviteeId": "e4f5a6b7-c8d9-0123-4567-890123456789",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Johannes Stroh",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Steffanie Stroh",
+      "gender": "Female"
+    }],
+    "children": ["Marlena Stroh"],
+    "overallCount": 3
+  },
+  {
+    "inviteeId": "f5a6b7c8-d9e0-1234-5678-901234567890",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "David Mühlgrabner",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Magdalena Mühlgrabner",
+      "gender": "Female"
+    }],
+    "children": ["Miriam Mühlgrabner", "Rahel Mühlgrabner", "Jakob Mühlgrabner"],
+    "overallCount": 5
+  },
+  {
+    "inviteeId": "a6b7c8d9-e0f1-2345-6789-012345678901",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Christian Klanner",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Eva Klanner",
+      "gender": "Female"
+    }],
+    "children": ["Robert Klanner", "Rachel Klanner", "Esther Klanner"],
+    "overallCount": 5
+  },
+  {
+    "inviteeId": "b7c8d9e0-f1a2-3456-7890-123456789012",
+    "language": "en",
+    "invitees": [{
+      "inviteeName": "Sarah Rose",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "c8d9e0f1-a2b3-4567-8901-234567890123",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Daniel Schwendtner",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d9e0f1a2-b3c4-5678-9012-345678901234",
+    "language": "en",
+    "invitees": [{
+      "inviteeName": "Perazim Maas",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e0f1a2b3-c4d5-6789-0123-456789012345",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Elli Mitterbauer",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "David Mitterbauer",
+      "gender": "Male"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "f1a2b3c4-d5e6-7890-1234-567890123456",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Eva Hörschläger",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "a2b3c4d5-e6f7-8901-2345-678901234567",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Miriam Winter",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "Mateo Winter",
+      "gender": "Male"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "b3c4d5e6-f7a8-9012-3456-789012345678",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Samuel Mühlleitner",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "c4d5e6f7-a8b9-0123-4567-890123456789",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Judith Klanner",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d5e6f7a8-b9c0-1234-5678-901234567891",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Bruno Taitl",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Sigrid Taitl",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "e6f7a8b9-c0d1-2345-6789-012345678902",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Andy Röthgens",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Becca Röthgens",
+      "gender": "Female"
+    }],
+    "children": ["Ethan Röthgens", "Emily Röthgens"],
+    "overallCount": 4
+  },
+  {
+    "inviteeId": "f7a8b9c0-d1e2-3456-7890-123456789013",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Doris Wozabal",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "Christian Wozabal",
+      "gender": "Male"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "a8b9c0d1-e2f3-4567-8901-234567890124",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Markus Milkovic",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Katja Milkovic",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "b9c0d1e2-f3a4-5678-9012-345678901235",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Markus Krämer",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Ute Krämer",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "c0d1e2f3-a4b5-6789-0123-456789012346",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Hannes Krämer",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Auguste Krämer",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "d1e2f3a4-b5c6-7890-1234-567890123457",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Dietmar Hartl",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Monika Hartl",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "e2f3a4b5-c6d7-8901-2345-678901234568",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Daniel",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Magdalena",
+      "gender": "Female"
+    }],
+    "children": ["Rebecca", "Jonathan"],
+    "overallCount": 4
+  },
+  {
+    "inviteeId": "f3a4b5c6-d7e8-9012-3456-789012345679",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Nico",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Daniel",
+      "gender": "Male"
+    }],
+    "children": ["Milan"],
+    "overallCount": 3
+  },
+  {
+    "inviteeId": "a4b5c6d7-e8f9-0123-4567-890123456780",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Paul",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Rachel",
+      "gender": "Female"
+    }],
+    "children": ["Baby"],
+    "overallCount": 3
+  },
+  {
+    "inviteeId": "b5c6d7e8-f9a0-1234-5678-901234567891",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Dieter",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Anita",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "c6d7e8f9-a0b1-2345-6789-012345678902",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Maria Müller",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "Armin Müller",
+      "gender": "Male"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "d7e8f9a0-b1c2-3456-7890-123456789013",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Maria Winkelbauer",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e8f9a0b1-c2d3-4567-8901-234567890124",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Valerie Maienburg",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "f9a0b1c2-d3e4-5678-9012-345678901235",
+    "language": "en",
+    "invitees": [{
+      "inviteeName": "Cindy McCarver",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "a0b1c2d3-e4f5-6789-0123-456789012346",
+    "language": "en",
+    "invitees": [{
+      "inviteeName": "Annette",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "b1c2d3e4-f5a6-7890-1234-567890123457",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Flory",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "Matei",
+      "gender": "Male"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "c2d3e4f5-a6b7-8901-2345-678901234568",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Nicky",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d3e4f5a6-b7c8-9012-3456-789012345679",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Carmen",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e4f5a6b7-c8d9-0123-4567-890123456780",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Stefan Olariu",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "f5a6b7c8-d9e0-1234-5678-901234567891",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Eduard",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "a6b7c8d9-e0f1-2345-6789-012345678902",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Sorin",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "b7c8d9e0-f1a2-3456-7890-123456789013",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Alex",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "c8d9e0f1-a2b3-4567-8901-234567890124",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Beate",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d9e0f1a2-b3c4-5678-9012-345678901235",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Alina",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e0f1a2b3-c4d5-6789-0123-456789012346",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Maria",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "f1a2b3c4-d5e6-7890-1234-567890123457",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Lisa",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "a2b3c4d5-e6f7-8901-2345-678901234568",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Martina",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "b3c4d5e6-f7a8-9012-3456-789012345679",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Johannes",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "c4d5e6f7-a8b9-0123-4567-890123456780",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Lena",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d5e6f7a8-b9c0-1234-5678-901234567892",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Anna",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e6f7a8b9-c0d1-2345-6789-012345678903",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Esther",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "Luigi",
+      "gender": "Male"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "f7a8b9c0-d1e2-3456-7890-123456789014",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Andrei",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Susanne",
+      "gender": "Female"
+    }],
+    "children": ["Nathanael"],
+    "overallCount": 3
+  },
+  {
+    "inviteeId": "a8b9c0d1-e2f3-4567-8901-234567890125",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Marius",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Olga",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "b9c0d1e2-f3a4-5678-9012-345678901236",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Ionut",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "c0d1e2f3-a4b5-6789-0123-456789012347",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Larissa",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d1e2f3a4-b5c6-7890-1234-567890123458",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Luciana",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e2f3a4b5-c6d7-8901-2345-678901234569",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Ioanna",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "f3a4b5c6-d7e8-9012-3456-789012345680",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Sonja",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "a4b5c6d7-e8f9-0123-4567-890123456781",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Janina",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "b5c6d7e8-f9a0-1234-5678-901234567892",
+    "language": "en",
+    "invitees": [{
+      "inviteeName": "Aurora",
+      "gender": "Female"
+    },
+    {
+      "inviteeName": "Robert",
+      "gender": "Male"
+    }],
+    "children": ["Rosemary", "Elisabeth"],
+    "overallCount": 4
+  },
+  {
+    "inviteeId": "c6d7e8f9-a0b1-2345-6789-012345678903",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Catalina",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "d7e8f9a0-b1c2-3456-7890-123456789014",
+    "language": "ro",
+    "invitees": [{
+      "inviteeName": "Alice",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "e8f9a0b1-c2d3-4567-8901-234567890125",
+    "language": "en",
+    "invitees": [{
+      "inviteeName": "Dan",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "f9a0b1c2-d3e4-5678-9012-345678901236",
+    "language": "en",
+    "invitees": [{
+      "inviteeName": "Delbert",
+      "gender": "Male"
+    }],
+    "overallCount": 1
   }
 ]
