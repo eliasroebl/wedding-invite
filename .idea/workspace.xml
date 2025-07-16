@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ac9cf5f-43dc-4242-9061-9fc8b2506e3c" name="Changes" comment="Add .nojekyll file to configure GitHub Pages">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;eliasroebl&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/eliasroebl/wedding-invite&quot;,
+    &quot;accountId&quot;: &quot;f98d0a86-22d5-49c0-8057-0285c19b5dab&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2zCCWHSmnKIQriwIOYGMbPIRuRX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/eliasroebl/IdeaProjects/WeddingInvite/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/Users/eliasroebl/.nvm/versions/node/v23.9.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/eliasroebl/IdeaProjects/WeddingInvite/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/fonts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ac9cf5f-43dc-4242-9061-9fc8b2506e3c" name="Changes" comment="" />
+      <created>1751225699315</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751225699315</updated>
+      <workItem from="1751225700338" duration="36184000" />
+      <workItem from="1752079921547" duration="163000" />
+      <workItem from="1752346977199" duration="29184000" />
+      <workItem from="1752696005644" duration="8403000" />
+      <workItem from="1752705083710" duration="43000" />
+    </task>
+    <task id="LOCAL-00001" summary="Init commit">
+      <option name="closed" value="true" />
+      <created>1751322778818</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751322778818</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactor app structure: Move invitation and RSVP into standalone components with routing support.">
+      <option name="closed" value="true" />
+      <created>1751376332504</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751376332504</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add RSVP submission status checks and improved user feedback&#10;&#10;- Introduced logic to check and display existing RSVP submissions.&#10;- Added dynamic messages for personalized feedback based on RSVP status.&#10;- Enhanced UI with loading states and disabled states for buttons.&#10;- Updated styles for consistent appearance of new elements.&#10;- Refactored invitation and RSVP components to handle submission states efficiently.">
+      <option name="closed" value="true" />
+      <created>1751380192513</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751380192513</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add GitHub Actions workflow for automated deployment to GitHub Pages  &#10;&#10;- Created `.github/workflows/deploy.yml` for Angular app deployment.  &#10;- Updated `README.md` with deployment details and site URL.  &#10;- Added specific npm build scripts for easier production and GitHub Pages deployment.">
+      <option name="closed" value="true" />
+      <created>1751380454146</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751380454146</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Increase Angular component style size limits in `angular.json` configuration">
+      <option name="closed" value="true" />
+      <created>1751380621879</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751380621879</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update GitHub Actions workflow: enable Pages and adjust artifact path">
+      <option name="closed" value="true" />
+      <created>1751380829472</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751380829472</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix asset paths for GitHub Pages: switch from absolute to relative paths for proper loading">
+      <option name="closed" value="true" />
+      <created>1751381933248</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751381933248</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add new invitees to guest list json file">
+      <option name="closed" value="true" />
+      <created>1751383141099</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1751383141099</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Further improvements">
+      <option name="closed" value="true" />
+      <created>1751838142118</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1751838142118</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Further improvements 2#">
+      <option name="closed" value="true" />
+      <created>1751838430074</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1751838430074</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Further improvements 3#">
+      <option name="closed" value="true" />
+      <created>1751838594583</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1751838594583</updated>
+    </task>
+    <task id="LOCAL-00012" summary="WIP design">
+      <option name="closed" value="true" />
+      <created>1752399045407</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752399045407</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add Prettier configuration and integrate Tailwind CSS plugin&#10;&#10;- Configure `.prettierrc` for project-wide code formatting&#10;- Add `prettier` and `prettier-plugin-tailwindcss` to dev dependencies&#10;- Update `package.json` with format scripts (`format` and `format:check`)&#10;- Apply consistent formatting to HTML templates, including invitation and RSVP components">
+      <option name="closed" value="true" />
+      <created>1752515088994</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752515088994</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add custom CSS and fonts for wedding page design&#10;&#10;- Implement detailed CSS styles for the wedding page, including design system variables, responsive layouts, and button styles&#10;- Add American Oak and Olympian Roman fonts to public assets&#10;- Include font documentation and license files for reference">
+      <option name="closed" value="true" />
+      <created>1752517950404</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752517950404</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Remove American Oak and Olympian Roman fonts along with associated documentation and files">
+      <option name="closed" value="true" />
+      <created>1752517968619</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1752517968619</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Relocate American Oak and Olympian Roman fonts to `src/assets` and update CSS font-face paths.">
+      <option name="closed" value="true" />
+      <created>1752518409519</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1752518409519</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add guest list, translation service, and multilingual support&#10;&#10;- Populate `public/guest-list.csv` and `public/guest-list.json` with detailed invitee data&#10;- Introduce `TranslationService` to manage multilingual translations in `src/app/translation.service.ts`&#10;- Provide localized strings for `de`, `en`, and `ro` languages, supporting personalized greetings and RSVP responses">
+      <option name="closed" value="true" />
+      <created>1752700148960</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1752700148960</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update guest list, translations, and invitation template&#10;&#10;- Add new invitees to `guest-list.json` and `guest-list.csv`&#10;- Update invitee attributes (names, genders, languages) to improve data accuracy&#10;- Localize date and time strings in `TranslationService` with support for `de`, `en`, and `ro`&#10;- Modify invitation template to use dynamic date and time from translations">
+      <option name="closed" value="true" />
+      <created>1752702382627</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752702382627</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add .nojekyll file to configure GitHub Pages">
+      <option name="closed" value="true" />
+      <created>1752704785393</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1752704785393</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init commit" />
+    <MESSAGE value="Refactor app structure: Move invitation and RSVP into standalone components with routing support." />
+    <MESSAGE value="Add RSVP submission status checks and improved user feedback&#10;&#10;- Introduced logic to check and display existing RSVP submissions.&#10;- Added dynamic messages for personalized feedback based on RSVP status.&#10;- Enhanced UI with loading states and disabled states for buttons.&#10;- Updated styles for consistent appearance of new elements.&#10;- Refactored invitation and RSVP components to handle submission states efficiently." />
+    <MESSAGE value="Add GitHub Actions workflow for automated deployment to GitHub Pages  &#10;&#10;- Created `.github/workflows/deploy.yml` for Angular app deployment.  &#10;- Updated `README.md` with deployment details and site URL.  &#10;- Added specific npm build scripts for easier production and GitHub Pages deployment." />
+    <MESSAGE value="Increase component style size limits in `angular.json` to 8kB (warning) and 16kB (error)." />
+    <MESSAGE value="Increase Angular component style size limits in `angular.json` configuration" />
+    <MESSAGE value="Update GitHub Actions workflow: enable Pages and adjust artifact path" />
+    <MESSAGE value="Remove leading slashes from asset and API paths for improved compatibility with relative URLs." />
+    <MESSAGE value="Fix asset paths for GitHub Pages: switch from absolute to relative paths for proper loading" />
+    <MESSAGE value="Add new invitees to guest list json file" />
+    <MESSAGE value="Further improvements" />
+    <MESSAGE value="Further improvements 2#" />
+    <MESSAGE value="Further improvements 3#" />
+    <MESSAGE value="WIP design" />
+    <MESSAGE value="Add Prettier configuration and integrate Tailwind CSS plugin&#10;&#10;- Configure `.prettierrc` for project-wide code formatting&#10;- Add `prettier` and `prettier-plugin-tailwindcss` to dev dependencies&#10;- Update `package.json` with format scripts (`format` and `format:check`)&#10;- Apply consistent formatting to HTML templates, including invitation and RSVP components" />
+    <MESSAGE value="Add custom CSS and fonts for wedding page design&#10;&#10;- Implement detailed CSS styles for the wedding page, including design system variables, responsive layouts, and button styles&#10;- Add American Oak and Olympian Roman fonts to public assets&#10;- Include font documentation and license files for reference" />
+    <MESSAGE value="Remove American Oak and Olympian Roman fonts along with associated documentation and files" />
+    <MESSAGE value="Relocate American Oak and Olympian Roman fonts to `src/assets` and update CSS font-face paths." />
+    <MESSAGE value="Add guest list, translation service, and multilingual support&#10;&#10;- Populate `public/guest-list.csv` and `public/guest-list.json` with detailed invitee data&#10;- Introduce `TranslationService` to manage multilingual translations in `src/app/translation.service.ts`&#10;- Provide localized strings for `de`, `en`, and `ro` languages, supporting personalized greetings and RSVP responses" />
+    <MESSAGE value="Update guest list, translations, and invitation template&#10;&#10;- Add new invitees to `guest-list.json` and `guest-list.csv`&#10;- Update invitee attributes (names, genders, languages) to improve data accuracy&#10;- Localize date and time strings in `TranslationService` with support for `de`, `en`, and `ro`&#10;- Modify invitation template to use dynamic date and time from translations" />
+    <MESSAGE value="Add .nojekyll file to configure GitHub Pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add .nojekyll file to configure GitHub Pages" />
+  </component>
+</project>
