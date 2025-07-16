@@ -7,6 +7,8 @@ export interface Translation {
   where: string;
   kletzmayrHof: string;
   address: string;
+  date: string;
+  time: string;
   respond: string;
   downloadInvitation: string;
   
@@ -121,7 +123,9 @@ export class TranslationService {
       when: 'Wann?',
       where: 'Wo?',
       kletzmayrHof: 'Kletzmayr Hof',
-      address: 'Niederschöfring 22, 4502 St.Marien',
+      address: 'Niederschöfring 22, 4502 St.Marien, Österreich',
+      date: '06. September 2025',
+      time: '14:00 Uhr',
       respond: 'Antworten',
       downloadInvitation: 'Einladung herunterladen',
       
@@ -226,7 +230,9 @@ export class TranslationService {
       when: 'When?',
       where: 'Where?',
       kletzmayrHof: 'Kletzmayr Hof',
-      address: 'Niederschöfring 22, 4502 St.Marien',
+      address: 'Niederschöfring 22, 4502 St.Marien, Austria',
+      date: 'September 6, 2025',
+      time: '2:00 PM',
       respond: 'Respond',
       downloadInvitation: 'Download invitation',
       
@@ -331,7 +337,9 @@ export class TranslationService {
       when: 'Când?',
       where: 'Unde?',
       kletzmayrHof: 'Kletzmayr Hof',
-      address: 'Niederschöfring 22, 4502 St.Marien',
+      address: 'Niederschöfring 22, 4502 St.Marien, Austria',
+      date: '6 septembrie 2025',
+      time: '14:00',
       respond: 'Răspunde',
       downloadInvitation: 'Descarcă invitația',
       
