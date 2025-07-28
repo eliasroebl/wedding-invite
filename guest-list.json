@@ -843,7 +843,7 @@
     "inviteeId": "a4b5c6d7-e8f9-0123-4567-890123456781",
     "language": "ro",
     "invitees": [{
-      "inviteeName": "Janina",
+      "inviteeName": "Geanina",
       "gender": "Female"
     },
     {
@@ -1039,5 +1039,45 @@
       "gender": "Female"
     }],
     "overallCount": 2
+  },
+  {
+    "inviteeId": "67834e10-5e90-4130-9855-c20f2a0b12be",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Ruth Nowotny",
+      "gender": "Female"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "5d00a105-e6bc-4fa9-9f04-4f05874a3588",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Samuel Dallamaßl",
+      "gender": "Male"
+    }],
+    "overallCount": 1
+  },
+  {
+    "inviteeId": "4877dece-83ab-4a77-bfd5-cb0e7a1a8d0e",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Christian Rad",
+      "gender": "Male"
+    },
+    {
+      "inviteeName": "Gabi Rad",
+      "gender": "Female"
+    }],
+    "overallCount": 2
+  },
+  {
+    "inviteeId": "5f5a836c-89c2-4864-a2ac-2bf244b252ed",
+    "language": "de",
+    "invitees": [{
+      "inviteeName": "Florian Kindslehner",
+      "gender": "Male"
+    }],
+    "overallCount": 1
   }
 ]
